@@ -16,6 +16,7 @@ function JobCard() {
       </section>
       <form className="job-form">
         <textarea
+          rows="4"
           className="job-notes"
           placeholder="Some notes about the job"
         />
