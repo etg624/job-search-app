@@ -1,74 +1,30 @@
-* {
-  box-sizing: border-box;
-}
-
-.job-card {
-  background-image: linear-gradient(
-    141deg,
-    #9fb8ad 0%,
-    #1fc8db 51%,
-    #2cb5e8 75%
-  );
-  display: flex;
-  margin: 1em;
-  border: 2px solid black;
-  border-radius: 10px/30px;
-  height: 25vh;
-  min-width: 50vw;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  position: relative;
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 15px;
+  border-radius: 0.2em;
+  box-shadow: inset 0 0 5px #000000;
 }
 
 .job-desc {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin: 0;
-  align-self: start;
-  width: 30%;
-}
-.job-title {
-  margin: 0;
-}
-.job-desc .job-details {
-  padding-top: 20px;
-  color: purple;
-  margin: 0;
-}
-
-.location-pay p {
-  padding-left: 35px;
-  margin: 0;
+  margin-left: 10px;
+  grid-column: 1/2;
 }
 
 .job-form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  grid-column: 4;
+  grid-row-end: 1;
+  margin: 10px;
 }
 
 .job-notes {
-  margin-top: 10px;
-  max-height: 50%;
-  resize: none;
-  width: 50em;
-  height: 40em;
+  width: 27rem;
+  height: 10rem;
 }
 
 .schedule-button {
-  border: 1px solid #bbb;
-  font: bold 13px arial, helvetica, sans-serif;
-  color: #555;
-  background-color: #ddd;
+  padding: 6px 12px;
+  margin: 3px;
+  font-weight: bold;
 }
-
-.checkbox {
-  margin-top: 10px;
-}
-
-/* .job-notes {
-  justify-content: flex-end;
-} */
