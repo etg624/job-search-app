@@ -48,9 +48,10 @@
   margin-right: 10px;
 }
 
-.schedule-button {
+.button {
   border: 1px solid #bbb;
   font: bold 13px arial, helvetica, sans-serif;
+  margin-bottom: 5px;
   color: #555;
   background-color: #ddd;
 }

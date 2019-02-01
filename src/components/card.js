@@ -20,8 +20,11 @@ function JobCard() {
           className="job-notes"
           placeholder="Some notes about the job"
         />
-        <button className="schedule-button" type="submit">
+        <button className="schedule button" type="submit">
           Schedule
+        </button>
+        <button className="schedule button" type="submit">
+          Save Note
         </button>
         <span className="checkbox">
           <input type="checkbox" />
