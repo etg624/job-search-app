@@ -6,9 +6,9 @@ export const getJobRequest = () => ({
 });
 
 export const GET_JOB_SUCCESS = 'GET_JOB_SUCCESS';
-export const getJobSuccess = job => ({
+export const getJobSuccess = jobs => ({
   type: GET_JOB_SUCCESS,
-  job
+  jobs
 });
 
 export const GET_JOB_ERROR = 'GET_JOB_ERROR';
@@ -26,5 +26,8 @@ export const fetchJobs = job => dispatch => {
       }
       return res.json();
     })
-    .then(data => data.map(job => dispatch(getJobSuccess(job))));
+    .then(data => {
+      return data.map(job => dispatch(getJobSuccess(job)));
+    })
+    .catch(err => dispatch(getJobError(err)));
 };
