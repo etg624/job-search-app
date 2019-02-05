@@ -1,8 +1,11 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { postCommentSuccess } from '../actions/postComments';
 import './card.css';
 
 function JobCard(props) {
+  const comments = props.comments.map(comment => <li>{comment}</li>);
+
   return (
     <div className="job-card">
       <section className="job-desc">
@@ -13,23 +16,34 @@ function JobCard(props) {
           <p>{props.pay}</p>
         </div>
       </section>
-      <form className="job-form">
-        <p>{props.comments}</p>
-
-        <input type="text" placeholder="Enter a comment" />
-        <button className="schedule button" type="submit">
+      <form
+        className="job-form"
+        onSubmit={props.handleSubmit(value =>
+          props.dispatch(postCommentSuccess(value, props._id))
+        )}
+      >
+        <div>
+          <ul>{comments}</ul>
+        </div>
+        <Field
+          name="comments"
+          component="input"
+          type="text"
+          placeholder="Enter a comment"
+        />
+        <button className="comment button" type="submit">
           Post comment
         </button>
         <button className="schedule button" type="submit">
           Schedule
         </button>
-        <span className="checkbox">
-          <input type="checkbox" checked={props.applied} />
+        {/* <span>
+          <Field name="applied" type="checkbox" />
           Applied?
-        </span>
+        </span> */}
       </form>
     </div>
   );
 }
 
-export default JobCard;
+export default reduxForm({})(JobCard);

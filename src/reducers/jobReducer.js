@@ -9,6 +9,8 @@ import {
   ADD_JOB_REQUEST,
   ADD_JOB_ERROR
 } from '../actions/postJobs';
+
+import { POST_COMMENT_SUCCESS } from '../actions/postComments';
 const initialState = {
   jobs: [
     {
@@ -48,7 +50,8 @@ const initialState = {
       userId: '333333333333333333333301',
       location: 'Los Angeles',
       applied: false,
-      pay: '$30-$45 an hr'
+      pay: '$30-$45 an hr',
+      comments: []
     },
     {
       _id: '000000000000000000000004',
@@ -89,7 +92,8 @@ const initialState = {
       userId: '333333333333333333333301',
       location: 'Los Angeles',
       applied: false,
-      pay: '$30-$45 an hr'
+      pay: '$30-$45 an hr',
+      comments: []
     }
   ],
   loading: false,
@@ -132,6 +136,18 @@ export function jobReducer(state = initialState, action) {
     return {
       loading: null,
       error: action.error
+    };
+  } else if (action.type === POST_COMMENT_SUCCESS) {
+    console.log(action);
+    return {
+      ...state,
+      jobs: state.jobs.map(job => {
+        if (action.id === job._id) {
+          job.comments = [...job.comments, action.newComment.comments];
+        }
+
+        return job;
+      })
     };
   }
   return state;

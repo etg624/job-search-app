@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchJobs } from '../actions/getJobs';
+// import { fetchJobs } from '../actions/getJobs';
 import JobCard from './jobCard';
 
 class JobList extends Component {
@@ -9,10 +9,9 @@ class JobList extends Component {
   // }
 
   render() {
-    console.log(this.props);
     const jobs = this.props.jobs.map((job, index) => (
       <li key={index}>
-        <JobCard {...job} />
+        <JobCard {...job} form={`${index}jobForm`} />
       </li>
     ));
     return <ul>{jobs}</ul>;

@@ -56,6 +56,10 @@
   background-color: #ddd;
 }
 
+ul {
+  list-style-type: square;
+}
+
 .checkbox {
   margin: 10px;
 }
