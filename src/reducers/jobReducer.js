@@ -1,7 +1,9 @@
 import {
   GET_JOB_REQUEST,
   GET_JOB_SUCCESS,
-  GET_JOB_ERROR
+  GET_JOB_ERROR,
+  POST_COMMENT,
+  ADD_JOB
 } from '../actions/jobs';
 
 const initialState = {
@@ -111,6 +113,11 @@ export function jobReducer(state = initialState, action) {
       ...state,
       loading: false,
       error: action.error
+    };
+  } else if (action.type === ADD_JOB) {
+    return {
+      ...state,
+      jobs: [...state.jobs, action.newJob]
     };
   }
   return state;

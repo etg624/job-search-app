@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import JobCard from './components/jobCard';
 import Header from './components/header';
 import JobList from './components/jobList';
-
+import { Route } from 'react-router-dom';
+import AddJob from './components/addJob';
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
-        <JobList />
+        <Route exact path="/home" component={JobList} />
+        <Route exact path="/add" component={AddJob} />
       </div>
     );
   }

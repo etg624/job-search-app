@@ -2,6 +2,10 @@ import React from 'react';
 import './card.css';
 
 function JobCard(props) {
+  function handleCommentPost(e) {
+    e.preventDefault();
+  }
+
   return (
     <div className="job-card">
       <section className="job-desc">
@@ -14,7 +18,7 @@ function JobCard(props) {
       </section>
       <form className="job-form">
         <p>{props.comments}</p>
-        <input placeholder="Enter a comment" />
+        <input type="text" placeholder="Enter a comment" />
         <button className="schedule button" type="submit">
           Post comment
         </button>
