@@ -26,5 +26,5 @@ export const fetchJobs = job => dispatch => {
       }
       return res.json();
     })
-    .then(data => console.log(data));
+    .then(data => data.map(job => dispatch(getJobSuccess(job))));
 };
