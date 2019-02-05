@@ -17,18 +17,6 @@ export const getJobError = error => ({
   error
 });
 
-export const POST_COMMENT = 'POST_COMMENT';
-export const postComment = comment => ({
-  type: POST_COMMENT,
-  comment
-});
-
-export const ADD_JOB = 'ADD_JOB';
-export const addJob = newJob => ({
-  type: ADD_JOB,
-  newJob
-});
-
 export const fetchJobs = job => dispatch => {
   dispatch(getJobRequest());
   fetch(`${API_BASE_URL}/jobs`)

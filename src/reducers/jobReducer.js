@@ -1,10 +1,14 @@
 import {
   GET_JOB_REQUEST,
   GET_JOB_SUCCESS,
-  GET_JOB_ERROR,
-  ADD_JOB
-} from '../actions/jobs';
+  GET_JOB_ERROR
+} from '../actions/getJobs';
 
+import {
+  ADD_JOB_SUCCESS,
+  ADD_JOB_REQUEST,
+  ADD_JOB_ERROR
+} from '../actions/postJobs';
 const initialState = {
   jobs: [
     {
@@ -113,10 +117,21 @@ export function jobReducer(state = initialState, action) {
       loading: false,
       error: action.error
     };
-  } else if (action.type === ADD_JOB) {
+  } else if (action.type === ADD_JOB_REQUEST) {
+    return {
+      ...state,
+      loading: true,
+      error: null
+    };
+  } else if (action.type === ADD_JOB_SUCCESS) {
     return {
       ...state,
       jobs: [...state.jobs, action.newJob]
+    };
+  } else if (action.type === ADD_JOB_ERROR) {
+    return {
+      loading: null,
+      error: action.error
     };
   }
   return state;

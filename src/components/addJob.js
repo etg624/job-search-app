@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { addJobSuccess } from '../actions/postJobs';
 
 class AddJob extends Component {
+  onSubmit(values) {
+    return this.props.dispatch(addJobSuccess(values));
+  }
+
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <form>
+      <form onSubmit={handleSubmit(values => this.onSubmit(values))}>
         <div>
           <label>Job Title</label>
           <div>
             <Field
-              name="jobTitle"
+              name="title"
               component="input"
               type="text"
               placeholder="Enter a title"
@@ -32,7 +37,7 @@ class AddJob extends Component {
           <label>Write A Comment</label>
           <div>
             <Field
-              name="comment"
+              name="comments"
               component="input"
               type="text"
               placeholder="Write a comment"

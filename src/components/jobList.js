@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchJobs } from '../actions/jobs';
+import { fetchJobs } from '../actions/getJobs';
 import JobCard from './jobCard';
 
 class JobList extends Component {
