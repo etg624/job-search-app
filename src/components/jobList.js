@@ -9,6 +9,7 @@ class JobList extends Component {
   // }
 
   render() {
+    console.log(this.props);
     const jobs = this.props.jobs.map((job, index) => (
       <li key={index}>
         <JobCard {...job} />
@@ -18,10 +19,11 @@ class JobList extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  jobs: state.jobs,
-  loading: state.loading,
-  error: state.error
-});
-
+const mapStateToProps = state => {
+  return {
+    jobs: state.job.jobs,
+    loading: state.job.loading,
+    error: state.job.error
+  };
+};
 export default connect(mapStateToProps)(JobList);

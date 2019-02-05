@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Route exact path="/home" component={JobList} />
+        <Route exact path="/home" component={props => <JobList {...props} />} />
         <Route exact path="/add" component={AddJob} />
       </div>
     );

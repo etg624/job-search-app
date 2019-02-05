@@ -2,7 +2,6 @@ import {
   GET_JOB_REQUEST,
   GET_JOB_SUCCESS,
   GET_JOB_ERROR,
-  POST_COMMENT,
   ADD_JOB
 } from '../actions/jobs';
 
