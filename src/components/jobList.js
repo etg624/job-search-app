@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { fetchJobs } from '../actions/getJobs';
+import { fetchProtectedData } from '../actions/auth-actions/protected-data';
 import JobCard from './jobCard';
+import requiresLogin from '../components/auth/requires-login';
 
 class JobList extends Component {
-  // componentWillMount() {
-  //   return this.props.dispatch(fetchJobs(this.props.jobs));
-  // }
+  componentDidMount() {
+    this.props.dispatch(fetchProtectedData());
+  }
 
   render() {
     const jobs = this.props.jobs.map((job, index) => (
@@ -19,10 +20,14 @@ class JobList extends Component {
 }
 
 const mapStateToProps = state => {
+  const { currentUser } = state.auth;
   return {
+    username: state.auth.currentUser.username,
+    name: `${currentUser.firstName} ${currentUser.lastName}`,
+    protectedData: state.protectedData.data,
     jobs: state.job.jobs,
     loading: state.job.loading,
     error: state.job.error
   };
 };
-export default connect(mapStateToProps)(JobList);
+export default requiresLogin()(connect(mapStateToProps)(JobList));

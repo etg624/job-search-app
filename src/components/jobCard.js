@@ -46,4 +46,8 @@ function JobCard(props) {
   );
 }
 
-export default reduxForm({})(JobCard);
+JobCard.defaultProps = {};
+
+export default reduxForm({
+  form: 'jobCardForm'
+})(JobCard);
