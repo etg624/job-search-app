@@ -45,7 +45,14 @@ class App extends Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/home" component={props => <JobList {...props} />} />
         <Route exact path="/signup" component={RegistrationPage} />
-        <Route exact path="/add" component={AddJob} />
+        <Route
+          exact
+          path="/add"
+          component={props => {
+            console.log(props);
+            return <AddJob {...props} />;
+          }}
+        />
       </div>
     );
   }

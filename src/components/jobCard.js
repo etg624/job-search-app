@@ -4,7 +4,10 @@ import { postCommentSuccess } from '../actions/postComments';
 import './card.css';
 
 function JobCard(props) {
-  const comments = props.comments.map(comment => <li>{comment}</li>);
+  // console.log(props.comments);
+  const comments = props.comments.map((comment, i) => (
+    <li key={i}>{comment}</li>
+  ));
 
   return (
     <div className="job-card">

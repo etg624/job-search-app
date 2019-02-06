@@ -8,7 +8,6 @@ class AddJob extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <form onSubmit={handleSubmit(values => this.onSubmit(values))}>
@@ -34,17 +33,17 @@ class AddJob extends Component {
             />
           </div>
         </div>
-        <div>
+        {/* <div>
           <label>Write A Comment</label>
           <div>
             <Field
-              name="comments"
+              name={['comments']}
               component="input"
               type="text"
               placeholder="Write a comment"
             />
           </div>
-        </div>
+        </div> */}
         <div>
           <label>Location</label>
           <div>
@@ -84,9 +83,9 @@ class AddJob extends Component {
   }
 }
 
-AddJob.defaultProps = {
-  comments: []
-};
+// AddJob.defaultProps = {
+//   comments: []
+// };
 
 export default reduxForm({
   form: 'addJobForm'
