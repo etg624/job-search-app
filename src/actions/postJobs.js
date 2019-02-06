@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { loadAuthToken } from '../local-storage';
 
 export const ADD_JOB_REQUEST = 'ADD_JOB_REQUEST';
 export const addJobRequest = () => ({
@@ -21,8 +22,11 @@ export const addJob = newJob => dispatch => {
   dispatch(addJobRequest());
   fetch(`${API_BASE_URL}/jobs`, {
     method: 'POST',
-    body: JSON.stringify(newJob),
-    headers: { 'Content-Type': 'application/json' }
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${loadAuthToken()}`
+    },
+    body: JSON.stringify(newJob)
   })
     .then(res => {
       if (!res.ok) {

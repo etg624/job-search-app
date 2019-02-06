@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { addJobSuccess } from '../actions/postJobs';
+import { addJob } from '../actions/postJobs';
+import requiresLogin from '../components/auth/requires-login';
 
 class AddJob extends Component {
-  onSubmit(values) {
-    return this.props.dispatch(addJobSuccess(values));
-  }
-
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <form onSubmit={handleSubmit(values => this.onSubmit(values))}>
+      <form
+        onSubmit={handleSubmit(values => this.props.dispatch(addJob(values)))}
+      >
         <div>
           <label>Job Title</label>
           <div>
@@ -43,7 +42,7 @@ class AddJob extends Component {
               placeholder="Write a comment"
             />
           </div>
-        </div> */}
+        </div>*/}
         <div>
           <label>Location</label>
           <div>
@@ -87,6 +86,8 @@ class AddJob extends Component {
 //   comments: []
 // };
 
-export default reduxForm({
-  form: 'addJobForm'
-})(AddJob);
+export default requiresLogin()(
+  reduxForm({
+    form: 'addJobForm'
+  })(AddJob)
+);

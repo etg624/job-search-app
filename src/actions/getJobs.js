@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config';
+import { loadAuthToken } from '../local-storage';
 
 export const GET_JOB_REQUEST = 'GET_JOB_REQUEST';
 export const getJobRequest = () => ({
@@ -17,9 +18,15 @@ export const getJobError = error => ({
   error
 });
 
-export const fetchJobs = job => dispatch => {
+export const fetchJobs = jobs => dispatch => {
   dispatch(getJobRequest());
-  fetch(`${API_BASE_URL}/jobs`)
+
+  fetch(`${API_BASE_URL}/jobs`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${loadAuthToken()}`
+    }
+  })
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
@@ -27,7 +34,7 @@ export const fetchJobs = job => dispatch => {
       return res.json();
     })
     .then(data => {
-      return data.map(job => dispatch(getJobSuccess(job)));
+      return dispatch(getJobSuccess(data));
     })
     .catch(err => dispatch(getJobError(err)));
 };

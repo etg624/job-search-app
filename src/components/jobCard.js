@@ -4,7 +4,6 @@ import { postCommentSuccess } from '../actions/postComments';
 import './card.css';
 
 function JobCard(props) {
-  // console.log(props.comments);
   const comments = props.comments.map((comment, i) => (
     <li key={i}>{comment}</li>
   ));
@@ -25,9 +24,6 @@ function JobCard(props) {
           props.dispatch(postCommentSuccess(value, props._id))
         )}
       >
-        <div>
-          <ul>{comments}</ul>
-        </div>
         <Field
           name="comments"
           component="input"
@@ -44,6 +40,9 @@ function JobCard(props) {
           <Field name="applied" type="checkbox" />
           Applied?
         </span> */}
+        <div>
+          <ul>{comments}</ul>
+        </div>
       </form>
     </div>
   );

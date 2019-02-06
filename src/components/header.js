@@ -15,9 +15,8 @@ class Header extends Component {
       logOutLink = <span onClick={() => this.logOut()}>| Log Out</span>;
       return (
         <div>
-          <Link to="/home">Home</Link> | <Link to="/search">Search Jobs </Link>|{' '}
-          <Link to="/add">Add Job</Link> |
-          <Link to="/schedule">Check Your Schedule</Link>
+          <Link to="/home">Home</Link> | <Link to="/add">Add Job</Link> |
+          <Link to="/schedule"> Check Your Schedule </Link>
           <Link to="/">{logOutLink}</Link>
         </div>
       );

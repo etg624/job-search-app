@@ -11,7 +11,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   combineReducers({
-    job: jobReducer,
+    jobs: jobReducer,
     form: fromReducer,
     auth: authReducer,
     protectedData: protectedDataReducer

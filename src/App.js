@@ -49,7 +49,6 @@ class App extends Component {
           exact
           path="/add"
           component={props => {
-            console.log(props);
             return <AddJob {...props} />;
           }}
         />
