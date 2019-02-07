@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../config';
+import { API_BASE_URL } from '../../config';
 
 export const GET_JOB_REQUEST = 'GET_JOB_REQUEST';
 export const getJobRequest = () => ({
@@ -34,6 +34,7 @@ export const fetchJobs = jobs => (dispatch, getState) => {
       return res.json();
     })
     .then(data => {
+      console.log('DATA', data);
       return dispatch(getJobSuccess(data));
     })
     .catch(err => dispatch(getJobError(err)));

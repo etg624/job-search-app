@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../config';
+import { API_BASE_URL } from '../../config';
 
 export const GET_JOB_BY_ID_REQUEST = 'GET_JOB_BY_ID_REQUEST';
 export const getJobByIdRequest = () => ({

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { postCommentSuccess } from '../actions/postComments';
+import { postComment } from '../actions/comment-actions/postComments';
 import { Link } from 'react-router-dom';
-import { fetchJobs } from '../actions/getJobs';
-import { deleteJob } from '../actions/deleteJob';
+import { fetchJobs } from '../actions/job-actions/getJobs';
+import { deleteJob } from '../actions/job-actions/deleteJob';
 import './card.css';
 
 class JobCard extends Component {
@@ -11,9 +11,10 @@ class JobCard extends Component {
     this.props.dispatch(fetchJobs());
   }
   render() {
-    const comments = this.props.comments.map((comment, i) => (
-      <li key={i}>{comment}</li>
-    ));
+    const comments = this.props.comments.map((comment, i) => {
+      console.log(comment);
+      return <li key={i}>{comment.content}</li>;
+    });
     return (
       <div className="job-card">
         <section className="job-desc">
@@ -24,9 +25,10 @@ class JobCard extends Component {
             <p>{this.props.pay}</p>
             <Link to={'/edit/' + this.props.id}>Edit Job</Link>
             <button
-              onClick={() =>
-                this.forceUpdate(this.props.dispatch(deleteJob(this.props.id)))
-              }
+              onClick={() => {
+                console.log(this.props.id);
+                return this.props.dispatch(deleteJob(this.props.id));
+              }}
             >
               Delete Job
             </button>
@@ -34,12 +36,13 @@ class JobCard extends Component {
         </section>
         <form
           className="job-form"
-          onSubmit={this.props.handleSubmit(value =>
-            this.props.dispatch(postCommentSuccess(value, this.props.id))
-          )}
+          onSubmit={this.props.handleSubmit(value => {
+            console.log(value);
+            return this.props.dispatch(postComment(value, this.props.id));
+          })}
         >
           <Field
-            name="comments"
+            name="content"
             component="input"
             type="text"
             placeholder="Enter a comment"

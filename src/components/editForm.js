@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { updateJob } from '../actions/updateJobs';
+import { updateJob } from '../actions/job-actions/updateJobs';
 import requiresLogin from '../components/auth/requires-login';
-import { getJobById } from '../actions/getJobById';
+import { getJobById } from '../actions/job-actions/getJobById';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 class EditForm extends Component {

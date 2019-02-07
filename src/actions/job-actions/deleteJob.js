@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../config';
+import { API_BASE_URL } from '../../config';
 
 export const DELETE_JOB_REQUEST = 'DELETE_JOB_REQUEST';
 export const deleteJobRequest = () => ({

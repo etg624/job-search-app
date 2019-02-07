@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchProtectedData } from '../actions/auth-actions/protected-data';
-import { fetchJobs } from '../actions/getJobs';
+import { fetchJobs } from '../actions/job-actions/getJobs';
 import JobCard from './jobCard';
 import requiresLogin from '../components/auth/requires-login';
 

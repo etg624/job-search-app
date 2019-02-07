@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { addJob } from '../actions/postJobs';
+import { addJob } from '../actions/job-actions/postJobs';
 import requiresLogin from '../components/auth/requires-login';
 
 class AddJob extends Component {
