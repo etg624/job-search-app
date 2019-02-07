@@ -8,6 +8,7 @@ import RegistrationPage from './components/auth/registration-page';
 import { Route, withRouter } from 'react-router-dom';
 import AddJob from './components/addJob';
 import { refreshAuthToken } from './actions/auth-actions/auth';
+import EditForm from './components/editForm';
 class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
@@ -45,6 +46,7 @@ class App extends Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/home" component={props => <JobList {...props} />} />
         <Route exact path="/signup" component={RegistrationPage} />
+        <Route exact path="/edit/:id" component={EditForm} />
         <Route
           exact
           path="/add"
