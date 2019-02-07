@@ -6,9 +6,9 @@ export const deleteJobRequest = () => ({
 });
 
 export const DELETE_JOB_SUCCESS = 'DELETE_JOB_SUCCESS';
-export const deleteJobSuccess = deletedJob => ({
+export const deleteJobSuccess = deletedJobId => ({
   type: DELETE_JOB_SUCCESS,
-  deletedJob
+  deletedJobId
 });
 
 export const DELETE_JOB_ERROR = 'DELETE_JOB_ERROR';
@@ -32,7 +32,10 @@ export const deleteJob = id => (dispatch, getState) => {
       if (!res.ok) {
         return res.json().then(err => Promise.reject(err));
       }
-      return res.json().then(data => dispatch(deleteJobSuccess(data)));
+      return res;
+    })
+    .then(() => {
+      dispatch(deleteJobSuccess(id));
     })
     .catch(err => {
       dispatch(deleteJobError(err));

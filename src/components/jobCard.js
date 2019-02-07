@@ -12,7 +12,6 @@ class JobCard extends Component {
   }
   render() {
     const comments = this.props.comments.map((comment, i) => {
-      console.log(comment);
       return <li key={i}>{comment.content}</li>;
     });
     return (
@@ -26,8 +25,8 @@ class JobCard extends Component {
             <Link to={'/edit/' + this.props.id}>Edit Job</Link>
             <button
               onClick={() => {
-                console.log(this.props.id);
-                return this.props.dispatch(deleteJob(this.props.id));
+                this.props.dispatch(deleteJob(this.props.id));
+                // return this.props.dispatch(fetchJobs());
               }}
             >
               Delete Job
@@ -37,7 +36,6 @@ class JobCard extends Component {
         <form
           className="job-form"
           onSubmit={this.props.handleSubmit(value => {
-            console.log(value);
             return this.props.dispatch(postComment(value, this.props.id));
           })}
         >

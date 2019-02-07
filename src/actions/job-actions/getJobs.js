@@ -34,7 +34,6 @@ export const fetchJobs = jobs => (dispatch, getState) => {
       return res.json();
     })
     .then(data => {
-      console.log('DATA', data);
       return dispatch(getJobSuccess(data));
     })
     .catch(err => dispatch(getJobError(err)));

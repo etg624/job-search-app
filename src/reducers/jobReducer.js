@@ -108,7 +108,7 @@ export function jobReducer(state = initialState, action) {
       ...state,
       job: action.job
     };
-  } else if (GET_JOB_BY_ID_ERROR) {
+  } else if (action.type === GET_JOB_BY_ID_ERROR) {
     return {
       ...state,
       loading: false,
@@ -122,9 +122,7 @@ export function jobReducer(state = initialState, action) {
     };
   } else if (action.type === DELETE_JOB_SUCCESS) {
     const newJobs = state.jobs.filter(job => {
-      console.log(action.deletedJob.id);
-      console.log(job.id);
-      return job.id !== action.deletedJob.id;
+      return job.id !== action.deletedJobId;
     });
     return {
       ...state,
@@ -137,18 +135,15 @@ export function jobReducer(state = initialState, action) {
       error: action.error
     };
   } else if (action.type === POST_COMMENT_REQUEST) {
-    console.log('REQUEST');
     return {
       ...state,
       loading: true,
       error: null
     };
   } else if (action.type === POST_COMMENT_SUCCESS) {
-    console.log('HELLO FROM REDUCER');
     return {
       ...state,
       jobs: state.jobs.map(job => {
-        console.log('HELLO FROM REDUCER', job);
         if (action.id === job._id) {
           job.comments = [...job.comments, action.newComment.comments];
         }
