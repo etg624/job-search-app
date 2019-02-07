@@ -22,11 +22,14 @@ export const updateJobError = error => ({
 export const updateJob = (id, updatedJob) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(updateJobRequest());
-  console.log('HELLO FROM ACTION', id, updatedJob);
+
   fetch(`${API_BASE_URL}/jobs/${id}`, {
     method: 'PUT',
     body: JSON.stringify(updatedJob),
-    headers: { Authorization: `Bearer ${authToken}` }
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
+    }
   })
     .then(res => {
       if (!res.ok) {
@@ -35,7 +38,6 @@ export const updateJob = (id, updatedJob) => (dispatch, getState) => {
       return res.json();
     })
     .then(data => {
-      console.log('DATA', data);
       return dispatch(updateJobSuccess(data));
     })
     .catch(err => dispatch(updateJobError(err)));

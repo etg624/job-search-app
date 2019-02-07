@@ -117,7 +117,10 @@ export function jobReducer(state = initialState, action) {
       error: null
     };
   } else if (action.type === DELETE_JOB_SUCCESS) {
-    const newJobs = state.jobs.filter(job => job.id !== action.deletedJob.id);
+    const newJobs = state.jobs.filter(job => {
+      console.log(job.id);
+      return job.id !== action.deletedJob.id;
+    });
     return {
       ...state,
       jobs: newJobs
