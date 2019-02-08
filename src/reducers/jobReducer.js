@@ -176,6 +176,12 @@ export function jobReducer(state = initialState, action) {
       ...state,
       jobs: deletedComment
     };
+  } else if (action.type === DELETE_COMMENT_ERROR) {
+    return {
+      ...state,
+      loading: false,
+      error: action.error
+    };
   }
   return state;
 }

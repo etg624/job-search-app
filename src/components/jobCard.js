@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import EditComment from '../components/editComment';
+import EditComment from './editComment';
 import { postComment } from '../actions/comment-actions/postComments';
 import { Link } from 'react-router-dom';
 import { fetchJobs } from '../actions/job-actions/getJobs';
 import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
-import { editCommentButton } from '../actions/comment-actions/editComment';
-import './card.css';
 
 class JobCard extends Component {
   componentDidMount() {
@@ -22,10 +20,6 @@ class JobCard extends Component {
           {comment.content}
           <span>
             <i
-              className="fas fa-edit"
-              onClick={() => this.props.dispatch(editCommentButton())}
-            />
-            <i
               className="fas fa-trash-alt"
               onClick={() => this.props.dispatch(deleteComment(commentId.id))}
             />
@@ -33,6 +27,7 @@ class JobCard extends Component {
         </li>
       );
     });
+
     return (
       <div className="job-card">
         <section className="job-desc">
@@ -83,10 +78,6 @@ class JobCard extends Component {
     );
   }
 }
-
-JobCard.defaultProps = {
-  comments: []
-};
 
 export default reduxForm({
   form: 'jobCardForm'
