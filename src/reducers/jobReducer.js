@@ -147,9 +147,16 @@ export function jobReducer(state = initialState, action) {
       error: null
     };
   } else if (action.type === POST_COMMENT_SUCCESS) {
+    const jobs = state.jobs.map(job => {
+      if (job.id === action.jobId) {
+        job.comments = [...job.comments, action.newComment];
+      }
+
+      return job;
+    });
     return {
       ...state,
-      jobs: action.jobWithNewComment.comments
+      jobs
     };
   } else if (action.type === POST_COMMENT_ERROR) {
     return {
@@ -169,12 +176,18 @@ export function jobReducer(state = initialState, action) {
       error: null
     };
   } else if (action.type === DELETE_COMMENT_SUCCESS) {
-    const deletedComment = state.jobs.filter(
-      job => job.comments.id !== action.deletedCommentId
-    );
+    const jobs = state.jobs.map(job => {
+      if (job.id === action.jobId) {
+        job.comments = job.comments.filter(
+          comment => comment.id !== action.deletedCommentId
+        );
+      }
+
+      return job;
+    });
     return {
       ...state,
-      jobs: deletedComment
+      jobs
     };
   } else if (action.type === DELETE_COMMENT_ERROR) {
     return {

@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import EditComment from './editComment';
 import { postComment } from '../actions/comment-actions/postComments';
 import { Link } from 'react-router-dom';
 import { fetchJobs } from '../actions/job-actions/getJobs';
 import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
-
+import './styles/card.css';
 class JobCard extends Component {
   componentDidMount() {
     this.props.dispatch(fetchJobs());
   }
   render() {
-    const commentId = this.props.comments.find(comment => comment.id);
-
-    const comments = this.props.comments.map((comment, i) => {
+    const commentsToRender = this.props.comments || [];
+    const comments = commentsToRender.map((comment, i) => {
       return (
         <li key={i}>
           {comment.content}
           <span>
             <i
               className="fas fa-trash-alt"
-              onClick={() => this.props.dispatch(deleteComment(commentId.id))}
+              onClick={() =>
+                this.props.dispatch(deleteComment(comment.id, this.props.id))
+              }
             />
           </span>
         </li>
@@ -31,12 +31,18 @@ class JobCard extends Component {
     return (
       <div className="job-card">
         <section className="job-desc">
-          <h2 className="job-title">{this.props.title}</h2>
+          <header className="job-header">
+            <h2 className="job-title">{this.props.title}</h2>
+            <Link className="edit-link" to={`/edit/${this.props.id}`}>
+              Edit Job
+            </Link>
+          </header>
+
           <p className="job-details">{this.props.description}</p>
           <div className="location-pay">
             <p>{this.props.location}</p>
             <p>{this.props.pay}</p>
-            <Link to={'/edit/' + this.props.id}>Edit Job</Link>
+
             <button
               onClick={() => {
                 this.props.dispatch(deleteJob(this.props.id));
@@ -71,7 +77,7 @@ class JobCard extends Component {
           Applied?
         </span> */}
           <div>
-            <ul>{this.props.editComment ? <EditComment /> : comments}</ul>
+            <ul className="comments">{comments}</ul>
           </div>
         </form>
       </div>

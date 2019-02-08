@@ -1,0 +1,47 @@
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: purple;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  opacity: 0.75;
+}
+
+.job-card {
+  margin: 20px 8px;
+  -webkit-box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  -moz-box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  padding-bottom: 15px;
+  border-radius: 15px;
+}
+
+.edit-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+
+  padding: 6px 15px 6px 0px;
+  width: 100px;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.job-title {
+  padding: 6px 0 6px 15px;
+}
+
+.comments {
+  padding: 10px 20px 15px 20px;
+  list-style: none;
+}
+
+.comments > li {
+  padding-bottom: 12px;
+}
+
+.fas {
+  padding-left: 20px;
+  cursor: pointer;
+}

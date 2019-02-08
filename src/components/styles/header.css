@@ -1,0 +1,50 @@
+.link {
+  color: purple;
+  text-decoration: none;
+}
+
+.header {
+  background: #f8f9fc;
+  background: linear-gradient(
+    45deg,
+    #f8f9fc 0%,
+    #f0f1f8 67%,
+    #f0f1f8 67%,
+    #f0f1f8 100%
+  );
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.logout-link {
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 7px 32px;
+  background-color: purple;
+}
+
+@media (max-width: 500px) {
+  .logout-link {
+    padding: 5px 15px;
+    width: 100vw;
+    font-weight: normal;
+  }
+}
+@media (max-width: 380px) {
+  .header {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+  .logout-link {
+    width: 20%;
+    padding: 0;
+    font-weight: normal;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,6 @@
+.job-list {
+  list-style: none;
+  display: flex;
+  flex: wrap;
+  justify-content: flex-start;
+}

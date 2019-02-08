@@ -6,10 +6,10 @@ export const postCommentRequest = () => ({
 });
 
 export const POST_COMMENT_SUCCESS = 'POST_COMMENT_SUCCESS';
-export const postCommentSuccess = (jobWithNewComment, id) => ({
+export const postCommentSuccess = (newComment, jobId) => ({
   type: POST_COMMENT_SUCCESS,
-  jobWithNewComment,
-  id
+  newComment,
+  jobId
 });
 
 export const POST_COMMENT_ERROR = 'POST_COMMENT_ERROR';
@@ -39,9 +39,8 @@ export const postComment = (comment, jobId) => (dispatch, getState) => {
       }
       return res.json();
     })
-    .then(data => {
-      console.log('DATA', data);
-      return dispatch(postCommentSuccess(data, data.userId));
+    .then(newComment => {
+      return dispatch(postCommentSuccess(newComment, jobId));
     })
     .catch(err => dispatch(postCommentError(err)));
 };

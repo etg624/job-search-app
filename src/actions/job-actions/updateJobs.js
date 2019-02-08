@@ -1,7 +1,5 @@
 import { API_BASE_URL } from '../../config';
 
-import { getJobById } from './getJobById';
-
 export const UPDATE_JOB_REQUEST = 'UPDATE_JOB_REQUEST';
 export const updateJobRequest = () => ({
   type: UPDATE_JOB_REQUEST

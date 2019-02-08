@@ -5,9 +5,10 @@ export const deleteCommentRequest = () => ({
   type: DELETE_COMMENT_REQUEST
 });
 export const DELETE_COMMENT_SUCCESS = 'DELETE_COMMENT_SUCCESS';
-export const deleteCommentSuccess = deletedCommentId => ({
+export const deleteCommentSuccess = (deletedCommentId, jobId) => ({
   type: DELETE_COMMENT_SUCCESS,
-  deletedCommentId
+  deletedCommentId,
+  jobId
 });
 export const DELETE_COMMENT_ERROR = 'DELETE_COMMENT_ERROR';
 export const deleteCommentError = error => ({
@@ -15,10 +16,11 @@ export const deleteCommentError = error => ({
   error
 });
 
-export const deleteComment = id => (dispatch, getState) => {
+export const deleteComment = (commentId, jobId) => (dispatch, getState) => {
+  console.log(commentId);
   const authToken = getState().auth.authToken;
   dispatch(deleteCommentRequest());
-  fetch(`${API_BASE_URL}/comments/${id}`, {
+  fetch(`${API_BASE_URL}/comments/${commentId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -32,7 +34,7 @@ export const deleteComment = id => (dispatch, getState) => {
       return res;
     })
     .then(() => {
-      dispatch(deleteCommentSuccess(id));
+      dispatch(deleteCommentSuccess(commentId, jobId));
     })
     .catch(err => {
       dispatch(deleteCommentError(err));
