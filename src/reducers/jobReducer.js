@@ -31,8 +31,15 @@ import {
   POST_COMMENT_SUCCESS,
   POST_COMMENT_ERROR
 } from '../actions/comment-actions/postComments';
+import { EDIT_COMMENT_BUTTON } from '../actions/comment-actions/editComment';
+import {
+  DELETE_COMMENT_ERROR,
+  DELETE_COMMENT_REQUEST,
+  DELETE_COMMENT_SUCCESS
+} from '../actions/comment-actions/deleteComments';
 const initialState = {
   jobs: [],
+  editComment: false,
   loading: false,
   error: null
 };
@@ -84,7 +91,6 @@ export function jobReducer(state = initialState, action) {
     return {
       ...state,
       job: state.jobs.map((job, index) => {
-        console.log('from reducer', action.updatedJob.id);
         if (job.id === action.updatedJob.id) {
           return action.updatedJob;
         }
@@ -143,19 +149,32 @@ export function jobReducer(state = initialState, action) {
   } else if (action.type === POST_COMMENT_SUCCESS) {
     return {
       ...state,
-      jobs: state.jobs.map(job => {
-        if (action.id === job._id) {
-          job.comments = [...job.comments, action.newComment.comments];
-        }
-
-        return job;
-      })
+      jobs: action.jobWithNewComment.comments
     };
   } else if (action.type === POST_COMMENT_ERROR) {
     return {
       ...state,
       loading: false,
       error: action.error
+    };
+  } else if (action.type === EDIT_COMMENT_BUTTON) {
+    return {
+      ...state,
+      editComment: !state.editComment
+    };
+  } else if (action.type === DELETE_COMMENT_REQUEST) {
+    return {
+      ...state,
+      loading: this,
+      error: null
+    };
+  } else if (action.type === DELETE_COMMENT_SUCCESS) {
+    const deletedComment = state.jobs.filter(
+      job => job.comments.id !== action.deletedCommentId
+    );
+    return {
+      ...state,
+      jobs: deletedComment
     };
   }
   return state;

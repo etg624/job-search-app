@@ -6,9 +6,9 @@ export const postCommentRequest = () => ({
 });
 
 export const POST_COMMENT_SUCCESS = 'POST_COMMENT_SUCCESS';
-export const postCommentSuccess = (newComment, id) => ({
+export const postCommentSuccess = (jobWithNewComment, id) => ({
   type: POST_COMMENT_SUCCESS,
-  newComment,
+  jobWithNewComment,
   id
 });
 
@@ -18,11 +18,11 @@ export const postCommentError = error => ({
   error
 });
 
-export const postComment = (comment, id) => (dispatch, getState) => {
+export const postComment = (comment, jobId) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const newComment = {
-    jobId: id,
-    comment: comment
+    jobId,
+    comment
   };
   dispatch(postCommentRequest());
   fetch(`${API_BASE_URL}/comments`, {
