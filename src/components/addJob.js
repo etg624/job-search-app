@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { addJob } from '../actions/job-actions/postJobs';
 import requiresLogin from '../components/auth/requires-login';
+import './styles/addJob.css';
 
 class AddJob extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <form
+        className="add-job-form"
         onSubmit={handleSubmit(values => this.props.dispatch(addJob(values)))}
       >
         <div>
@@ -32,17 +34,6 @@ class AddJob extends Component {
             />
           </div>
         </div>
-        {/* <div>
-          <label>Write A Comment</label>
-          <div>
-            <Field
-              name={['comments']}
-              component="input"
-              type="text"
-              placeholder="Write a comment"
-            />
-          </div>
-        </div>*/}
         <div>
           <label>Location</label>
           <div>
@@ -66,10 +57,15 @@ class AddJob extends Component {
           </div>
         </div>
         <div>
-          <button type="submit" disabled={pristine || submitting}>
+          <button
+            className="form-button"
+            type="submit"
+            disabled={pristine || submitting}
+          >
             Submit
           </button>
           <button
+            className="form-button"
             type="button"
             disabled={pristine || submitting}
             onClick={reset}

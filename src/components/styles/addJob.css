@@ -1,0 +1,32 @@
+.add-job-form {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 8px;
+  -webkit-box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  -moz-box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  border-radius: 15px;
+  width: 20%;
+  align-items: center;
+  padding: 23px 0;
+  border-top-style: outset;
+  border-top-color: #d3c9d8;
+
+  margin: 15px auto;
+}
+
+.form-button {
+  margin: 6px;
+}
+
+@media (max-width: 1000px) {
+  .add-job-form {
+    width: 40%;
+  }
+}
+@media (max-width: 350px) {
+  .add-job-form {
+    width: 70%;
+  }
+}

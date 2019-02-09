@@ -63,33 +63,6 @@
   padding: 5px;
 }
 
-.button {
-  padding: 5px;
-  background-color: purple;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  border-radius: 25px;
-  opacity: 0.9;
-  border-style: none;
-  cursor: pointer;
-}
-
-.comment-input {
-  padding: 5px;
-  margin-left: 6px;
-  border-top-style: none;
-  border-right-style: none;
-  border-left-style: none;
-  transition: border 0.5s linear 0s, box-shadow 0.2s linear 0s;
-  background-color: white !important;
-}
-
-.comment-input:focus {
-  border-color: purple;
-  box-shadow: 0 1px 1px purple inset, 0 0 8px purple;
-  outline: 0 none;
-}
 .schedule-delete-buttons {
   display: flex;
   justify-content: space-around;

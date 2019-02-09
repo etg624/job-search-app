@@ -10,3 +10,39 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+
+button {
+  padding: 5px;
+  background-color: purple;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  opacity: 0.9;
+  border-style: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:focus {
+  outline: thin dotted;
+}
+
+input {
+  padding: 5px;
+  margin-left: 6px;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  transition: border 0.5s linear 0s, box-shadow 0.2s linear 0s;
+  background-color: white !important;
+}
+
+input:focus {
+  border-color: purple;
+  box-shadow: 0 1px 1px purple inset, 0 0 8px purple;
+  outline: 0 none;
+}

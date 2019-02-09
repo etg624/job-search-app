@@ -5,6 +5,7 @@ import requiresLogin from '../components/auth/requires-login';
 import { getJobById } from '../actions/job-actions/getJobById';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './styles/editForm.css';
 class EditForm extends Component {
   componentDidMount() {
     this.props.dispatch(getJobById(this.props.match.params.id));
@@ -14,6 +15,7 @@ class EditForm extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <form
+        className="edit-form"
         onSubmit={handleSubmit(values => {
           return this.props.dispatch(
             updateJob(this.props.match.params.id, values)
@@ -76,10 +78,15 @@ class EditForm extends Component {
           </div>
         </div>
         <div>
-          <button type="submit" disabled={pristine || submitting}>
+          <button
+            className="form-button"
+            type="submit"
+            disabled={pristine || submitting}
+          >
             Submit
           </button>
           <button
+            className="form-button"
             type="button"
             disabled={pristine || submitting}
             onClick={reset}
