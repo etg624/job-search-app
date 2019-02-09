@@ -55,8 +55,7 @@ export function jobReducer(state = initialState, action) {
     return {
       ...state,
       jobs: action.jobs,
-      loading: false,
-      error: null
+      loading: false
     };
   } else if (action.type === GET_JOB_ERROR) {
     return {
@@ -123,7 +122,7 @@ export function jobReducer(state = initialState, action) {
   } else if (action.type === DELETE_JOB_REQUEST) {
     return {
       ...state,
-      loading: true,
+      // loading: true,
       error: null
     };
   } else if (action.type === DELETE_JOB_SUCCESS) {

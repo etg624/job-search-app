@@ -15,6 +15,7 @@
   box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
   padding-bottom: 15px;
   border-radius: 15px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .edit-link {
@@ -30,6 +31,7 @@
 
 .job-title {
   padding: 6px 0 6px 15px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .comments {
@@ -44,4 +46,55 @@
 .fas {
   padding-left: 20px;
   cursor: pointer;
+}
+
+.job-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-details {
+  padding: 10px;
+
+  font-weight: bold;
+}
+
+.job-location-pay {
+  padding: 5px;
+}
+
+.button {
+  padding: 5px;
+  background-color: purple;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  opacity: 0.9;
+  border-style: none;
+  cursor: pointer;
+}
+
+.comment-input {
+  padding: 5px;
+  margin-left: 6px;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  transition: border 0.5s linear 0s, box-shadow 0.2s linear 0s;
+  background-color: white !important;
+}
+
+.comment-input:focus {
+  border-color: purple;
+  box-shadow: 0 1px 1px purple inset, 0 0 8px purple;
+  outline: 0 none;
+}
+.schedule-delete-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.comment-button {
+  padding: 5px;
+  margin: 8px;
 }

@@ -7,9 +7,9 @@ import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
 import './styles/card.css';
 class JobCard extends Component {
-  componentDidMount() {
-    this.props.dispatch(fetchJobs());
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return false;
+  // }
   render() {
     const commentsToRender = this.props.comments || [];
     const comments = commentsToRender.map((comment, i) => {
@@ -30,54 +30,54 @@ class JobCard extends Component {
 
     return (
       <div className="job-card">
-        <section className="job-desc">
+        <section>
           <header className="job-header">
             <h2 className="job-title">{this.props.title}</h2>
             <Link className="edit-link" to={`/edit/${this.props.id}`}>
               Edit Job
             </Link>
           </header>
-
-          <p className="job-details">{this.props.description}</p>
-          <div className="location-pay">
-            <p>{this.props.location}</p>
-            <p>{this.props.pay}</p>
-
+          <div className="job-description">
+            <p className="job-details">{this.props.description}</p>
+            <div className="job-location-pay">
+              <p>{this.props.location}</p>
+              <p>{this.props.pay}</p>
+            </div>
+          </div>
+        </section>
+        <form className="job-form">
+          <div className="comment-container">
+            <Field
+              className="comment-input"
+              name="content"
+              component="input"
+              type="text"
+              placeholder="Enter a comment"
+            />
             <button
+              className="comment-button button"
+              type="button"
+              onClick={this.props.handleSubmit(value => {
+                console.log(value);
+                return this.props.dispatch(postComment(value, this.props.id));
+              })}
+            >
+              Post comment
+            </button>
+            <ul className="comments">{comments}</ul>
+          </div>
+          <div className="schedule-delete-buttons">
+            <button className="schedule-button button" type="submit">
+              Schedule
+            </button>
+            <button
+              className="delete-button button"
               onClick={() => {
                 this.props.dispatch(deleteJob(this.props.id));
               }}
             >
               Delete Job
             </button>
-          </div>
-        </section>
-        <form className="job-form">
-          <Field
-            name="content"
-            component="input"
-            type="text"
-            placeholder="Enter a comment"
-          />
-          <button
-            className="comment button"
-            type="button"
-            onClick={this.props.handleSubmit(value => {
-              console.log(value);
-              return this.props.dispatch(postComment(value, this.props.id));
-            })}
-          >
-            Post comment
-          </button>
-          <button className="schedule button" type="submit">
-            Schedule
-          </button>
-          {/* <span>
-          <Field name="applied" type="checkbox" />
-          Applied?
-        </span> */}
-          <div>
-            <ul className="comments">{comments}</ul>
           </div>
         </form>
       </div>

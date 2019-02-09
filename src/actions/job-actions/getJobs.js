@@ -24,7 +24,8 @@ export const fetchJobs = jobs => (dispatch, getState) => {
   fetch(`${API_BASE_URL}/jobs`, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${authToken}`
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': 'application/json'
     }
   })
     .then(res => {
