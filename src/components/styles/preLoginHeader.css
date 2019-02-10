@@ -40,21 +40,41 @@ h1 {
   .login-link,
   .signup-link {
     padding: 5px 15px;
-    width: 100vw;
+
     font-weight: normal;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 430px) {
   .pre-login-header {
     margin-top: 5px;
     display: flex;
-    flex-direction: column;
     width: 100vw;
   }
-  .logout-link {
-    width: 20%;
-    padding: 0;
-    font-weight: normal;
-    border-radius: 10px;
+  .pre-login-header h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  .pre-login-header {
+    margin-top: 5px;
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+  }
+  .pre-login-header h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .pre-login-header h1 {
+    font-size: 15px;
+  }
+
+  .login-link,
+  .signup-link {
+    padding: 2px 5px;
+    font-size: 10px;
   }
 }
