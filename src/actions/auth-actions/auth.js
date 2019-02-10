@@ -4,6 +4,7 @@ import { SubmissionError } from 'redux-form';
 import { API_BASE_URL } from '../../config';
 import { normalizeResponseErrors } from './utils';
 import { saveAuthToken, clearAuthToken } from '../../local-storage';
+import React from 'react';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -63,9 +64,11 @@ export const login = (username, password) => dispatch => {
       .catch(err => {
         const { code } = err;
         const message =
-          code === 401
-            ? 'Incorrect username or password'
-            : 'Unable to login, please try again';
+          code === 401 ? (
+            <div className="validate">Incorrect username or password</div>
+          ) : (
+            <div className="validate">Unable to login, please try again</div>
+          );
         dispatch(authError(err));
         // Could not authenticate, so return a SubmissionError for Redux
         // Form

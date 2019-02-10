@@ -41,7 +41,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Header />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/home" component={props => <JobList {...props} />} />

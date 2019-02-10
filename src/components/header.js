@@ -13,7 +13,11 @@ class Header extends Component {
   render() {
     let logOutLink;
     if (this.props.loggedIn) {
-      logOutLink = <span onClick={() => this.logOut()}> Log Out</span>;
+      logOutLink = (
+        <span className="logout" onClick={() => this.logOut()}>
+          Log Out
+        </span>
+      );
       return (
         <div className="header">
           <Link className="home-link link" to="/home">

@@ -3,6 +3,8 @@ import { Field, reduxForm, focus } from 'redux-form';
 import { registerUser } from '../../actions/auth-actions/users';
 import { login } from '../../actions/auth-actions/auth';
 import Input from '../input';
+import { Link } from 'react-router-dom';
+import '../styles/registrationForm.css';
 import { required, nonEmpty, matches, length, isTrimmed } from './validators';
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches('password');
@@ -19,7 +21,7 @@ export class RegistrationForm extends React.Component {
   render() {
     return (
       <form
-        className="login-form"
+        className="registration-form"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         <label htmlFor="firstName">First name</label>
@@ -48,11 +50,14 @@ export class RegistrationForm extends React.Component {
           validate={[required, nonEmpty, matchesPassword]}
         />
         <button
+          className="register-button"
           type="submit"
           disabled={this.props.pristine || this.props.submitting}
         >
           Register
         </button>
+
+        <Link to="/">Login</Link>
       </form>
     );
   }

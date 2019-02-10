@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
+import PreLoginHeader from './preLoginHeader';
 
 import RegistrationForm from './registration-form';
 
@@ -12,9 +13,8 @@ export function RegistrationPage(props) {
   }
   return (
     <div className="home">
-      <h2>Register for Foo App</h2>
+      <PreLoginHeader />
       <RegistrationForm />
-      <Link to="/">Login</Link>
     </div>
   );
 }

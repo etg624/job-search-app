@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { addJob } from '../actions/job-actions/postJobs';
 import requiresLogin from '../components/auth/requires-login';
 import './styles/addJob.css';
+import { required } from './auth/validators';
 
 class AddJob extends Component {
   render() {
@@ -20,6 +21,7 @@ class AddJob extends Component {
               component="input"
               type="text"
               placeholder="Enter a title"
+              validate={[required]}
             />
           </div>
         </div>

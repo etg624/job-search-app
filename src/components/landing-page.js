@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
 import LoginForm from '../components/auth/login-form';
+import PreLoginHeader from './auth/preLoginHeader';
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -12,9 +13,18 @@ export function LandingPage(props) {
 
   return (
     <div className="home">
-      <h2>Welcome to Your Future!</h2>
+      <PreLoginHeader />
+      <div className="app-description">
+        <h3>Organize your job search</h3>
+        <p>
+          Begin searching for your new career and add potential job
+          opportunities to your list of jobs, then create events for each job,
+          such as the date of an interview, or create a reminder to follow up
+          with an employer.
+        </p>
+      </div>
+
       <LoginForm />
-      <Link to="/signup">Sign Up</Link>
     </div>
   );
 }
