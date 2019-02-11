@@ -6,6 +6,7 @@ import JobCard from './jobCard';
 import AddJob from './addJob';
 import requiresLogin from '../components/auth/requires-login';
 import './styles/job-list.css';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 class JobList extends Component {
   componentDidMount() {
@@ -15,6 +16,13 @@ class JobList extends Component {
 
   render() {
     const jobs = this.props.jobs.map((props, index) => {
+      if (this.props.loading) {
+        return (
+          <div className="loading">
+            <ClipLoader />
+          </div>
+        );
+      }
       return (
         <li key={index}>
           <JobCard {...props} form={`${index}jobForm`} />
@@ -24,7 +32,17 @@ class JobList extends Component {
     return this.props.jobs.length ? (
       <ul className="job-list">{jobs}</ul>
     ) : (
-      <AddJob />
+      <div className="welcome-page">
+        <section className="welcome-message">
+          <h3>Welcome!</h3>
+          <p>
+            Start off your new career search, by adding your first potential
+            job!
+          </p>
+        </section>
+
+        <AddJob />
+      </div>
     );
   }
 }

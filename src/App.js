@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './App.css';
+import { Route, withRouter } from 'react-router-dom';
+import { refreshAuthToken } from './actions/auth-actions/auth';
 import Header from './components/header';
 import LandingPage from './components/landing-page';
 import JobList from './components/jobList';
 import RegistrationPage from './components/auth/registration-page';
-import { Route, withRouter } from 'react-router-dom';
 import AddJob from './components/addJob';
-import { refreshAuthToken } from './actions/auth-actions/auth';
+import ScheduleCalendar from './components/scheduleCalendar';
 import EditForm from './components/editForm';
+import './App.css';
 class App extends Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
@@ -47,6 +48,7 @@ class App extends Component {
         <Route exact path="/home" component={props => <JobList {...props} />} />
         <Route exact path="/signup" component={RegistrationPage} />
         <Route exact path="/edit/:id" component={EditForm} />
+        <Route exact path="/schedule" component={ScheduleCalendar} />
         <Route
           exact
           path="/add"

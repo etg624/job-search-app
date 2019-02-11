@@ -5,3 +5,22 @@
   justify-content: flex-start;
   margin-left: 8px;
 }
+
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-message {
+  font-family: 'Montserrat', sans-serif;
+  padding: 25px;
+  margin: 0 auto;
+  line-height: 175%;
+}
+
+.welcome-message h3 {
+  font-family: 'Permanent Marker';
+  color: #562855;
+  padding: 0 0 0 25px;
+  font-size: 20px;
+}

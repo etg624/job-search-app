@@ -29,8 +29,15 @@
 
 @media (max-width: 500px) {
   .logout-link {
-    padding: 5px 15px;
-    width: 100vw;
+    padding: 5px 10px;
+    width: 20vw;
+    font-weight: normal;
+  }
+}
+@media (max-width: 410px) {
+  .logout-link {
+    padding: 5px 10px;
+    width: 12vw;
     font-weight: normal;
   }
 }

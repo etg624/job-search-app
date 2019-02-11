@@ -45,6 +45,7 @@ const initialState = {
 };
 
 export function jobReducer(state = initialState, action) {
+  console.log(state.jobs);
   if (action.type === GET_JOB_REQUEST) {
     return {
       ...state,

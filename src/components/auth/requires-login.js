@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import ClipLoader from 'react-spinners/ClipLoader';
 export default () => Component => {
   function RequiresLogin(props) {
     const { authenticating, loggedIn, error, ...passThroughProps } = props;
     if (authenticating) {
-      return <div>Logging in...</div>;
+      return (
+        <div className="loading">
+          <ClipLoader />
+        </div>
+      );
     } else if (!loggedIn || error) {
       return <Redirect to="/" />;
     }

@@ -46,17 +46,6 @@ class EditForm extends Component {
             />
           </div>
         </div>
-        {/* <div>
-          <label>Write A Comment</label>
-          <div>
-            <Field
-              name={['comments']}
-              component="input"
-              type="text"
-              placeholder="Write a comment"
-            />
-          </div>
-        </div>*/}
         <div>
           <label>Location</label>
           <div>
@@ -93,17 +82,13 @@ class EditForm extends Component {
             disabled={pristine || submitting}
             onClick={reset}
           >
-            Clear Values
+            Clear Fields
           </button>
         </div>
       </form>
     );
   }
 }
-
-// AddJob.defaultProps = {
-//   comments: []
-// };
 
 const mapStateToProps = state => {
   return {

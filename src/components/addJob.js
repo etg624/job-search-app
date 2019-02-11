@@ -13,7 +13,6 @@ class AddJob extends Component {
   };
 
   render() {
-    console.log(this.props.history);
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
     return (

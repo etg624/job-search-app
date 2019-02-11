@@ -79,6 +79,13 @@ input[type='text'] {
   text-align: center;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
 @media (max-width: 1000) {
   .app-description {
     widows: 30%;
