@@ -32,6 +32,7 @@ export const addJob = newJob => (dispatch, getState) => {
       if (!res.ok) {
         return res.json().then(err => Promise.reject(err));
       }
+
       return res.json().then(data => dispatch(addJobSuccess(data)));
     })
     .catch(err => {

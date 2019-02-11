@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchProtectedData } from '../actions/auth-actions/protected-data';
 import { fetchJobs } from '../actions/job-actions/getJobs';
 import JobCard from './jobCard';
+import AddJob from './addJob';
 import requiresLogin from '../components/auth/requires-login';
 import './styles/job-list.css';
 
@@ -20,7 +21,11 @@ class JobList extends Component {
         </li>
       );
     });
-    return <ul className="job-list">{jobs}</ul>;
+    return this.props.jobs.length ? (
+      <ul className="job-list">{jobs}</ul>
+    ) : (
+      <AddJob />
+    );
   }
 }
 

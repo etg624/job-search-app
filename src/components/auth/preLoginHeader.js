@@ -6,7 +6,7 @@ function PreLoginHeader() {
   return (
     <div className="pre-login-header header">
       <h1>Searchule</h1>
-      <Link className="login-link link" to="/login">
+      <Link className="login-link link" to="/">
         Login
       </Link>
       <Link className="signup-link link" to="/signup">

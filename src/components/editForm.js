@@ -12,16 +12,17 @@ class EditForm extends Component {
     this.props.dispatch(getJobById(this.props.match.params.id));
   }
 
+  onSubmit = values => {
+    this.props.dispatch(updateJob(this.props.match.params.id, values));
+    this.props.history.push('/home');
+  };
+
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <form
         className="edit-form"
-        onSubmit={handleSubmit(values => {
-          return this.props.dispatch(
-            updateJob(this.props.match.params.id, values)
-          );
-        })}
+        onSubmit={handleSubmit(values => this.onSubmit(values))}
       >
         <div>
           <label>Job Title</label>
@@ -31,7 +32,6 @@ class EditForm extends Component {
               component="input"
               type="text"
               placeholder="Enter a title"
-              validate={[required]}
             />
           </div>
         </div>

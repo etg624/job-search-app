@@ -2,80 +2,90 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { addJob } from '../actions/job-actions/postJobs';
 import requiresLogin from '../components/auth/requires-login';
+import { withRouter } from 'react-router-dom';
 import './styles/addJob.css';
 import { required } from './auth/validators';
 
 class AddJob extends Component {
+  onSubmit = values => {
+    this.props.dispatch(addJob(values));
+    this.props.history.push('/home');
+  };
+
   render() {
+    console.log(this.props.history);
     const { handleSubmit, pristine, reset, submitting } = this.props;
+
     return (
-      <form
-        className="add-job-form"
-        onSubmit={handleSubmit(values => this.props.dispatch(addJob(values)))}
-      >
-        <div>
-          <label>Job Title</label>
+      <div>
+        <form
+          className="add-job-form"
+          onSubmit={handleSubmit(values => this.onSubmit(values))}
+        >
           <div>
-            <Field
-              name="title"
-              component="input"
-              type="text"
-              placeholder="Enter a title"
-              validate={[required]}
-            />
+            <label>Job Title</label>
+            <div>
+              <Field
+                name="title"
+                component="input"
+                type="text"
+                placeholder="Enter a title"
+                validate={[required]}
+              />
+            </div>
           </div>
-        </div>
-        <div>
-          <label>Description</label>
           <div>
-            <Field
-              name="description"
-              component="input"
-              type="text"
-              placeholder="Enter a description about this job"
-            />
+            <label>Description</label>
+            <div>
+              <Field
+                name="description"
+                component="input"
+                type="text"
+                placeholder="Enter a description about this job"
+              />
+            </div>
           </div>
-        </div>
-        <div>
-          <label>Location</label>
           <div>
-            <Field
-              name="location"
-              component="input"
-              type="text"
-              placeholder="Where is your the job?"
-            />
+            <label>Location</label>
+            <div>
+              <Field
+                name="location"
+                component="input"
+                type="text"
+                placeholder="Where is your the job?"
+              />
+            </div>
           </div>
-        </div>
-        <div>
-          <label>Pay</label>
           <div>
-            <Field
-              name="pay"
-              component="input"
-              type="text"
-              placeholder="How much does the job pay?"
-            />
+            <label>Pay</label>
+            <div>
+              <Field
+                name="pay"
+                component="input"
+                type="text"
+                placeholder="How much does the job pay?"
+              />
+            </div>
           </div>
-        </div>
-        <div>
-          <button
-            className="form-button"
-            type="submit"
-            disabled={pristine || submitting}
-          >
-            Submit
-          </button>
-          <button
-            className="form-button"
-            type="button"
-            disabled={pristine || submitting}
-            onClick={reset}
-          >
-            Clear Values
-          </button>
-        </div>
-      </form>
+          <div>
+            <button
+              className="form-button"
+              type="submit"
+              disabled={pristine || submitting}
+            >
+              Submit
+            </button>
+            <button
+              className="form-button"
+              type="button"
+              disabled={pristine || submitting}
+              onClick={reset}
+            >
+              Clear Values
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
@@ -84,8 +94,10 @@ class AddJob extends Component {
 //   comments: []
 // };
 
-export default requiresLogin()(
-  reduxForm({
-    form: 'addJobForm'
-  })(AddJob)
+export default withRouter(
+  requiresLogin()(
+    reduxForm({
+      form: 'addJobForm'
+    })(AddJob)
+  )
 );
