@@ -9,6 +9,7 @@ import RegistrationPage from './components/auth/registration-page';
 import AddJob from './components/addJob';
 import ScheduleCalendar from './components/scheduleCalendar';
 import EditForm from './components/editForm';
+import AddEventForm from './components/addEventForm';
 import './App.css';
 class App extends Component {
   componentDidUpdate(prevProps) {
@@ -49,6 +50,7 @@ class App extends Component {
         <Route exact path="/signup" component={RegistrationPage} />
         <Route exact path="/edit/:id" component={EditForm} />
         <Route exact path="/schedule" component={ScheduleCalendar} />
+        <Route exact path="/eventForm" component={AddEventForm} />
         <Route
           exact
           path="/add"

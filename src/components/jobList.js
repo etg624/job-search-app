@@ -18,7 +18,7 @@ class JobList extends Component {
     const jobs = this.props.jobs.map((props, index) => {
       if (this.props.loading) {
         return (
-          <div className="loading">
+          <div key={index} className="loading">
             <ClipLoader />
           </div>
         );

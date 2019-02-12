@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { postComment } from '../actions/comment-actions/postComments';
 import { Link } from 'react-router-dom';
-import { fetchJobs } from '../actions/job-actions/getJobs';
 import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
 import './styles/card.css';
@@ -67,9 +66,14 @@ class JobCard extends Component {
             <ul className="comments">{comments}</ul>
           </div>
           <div className="schedule-delete-buttons">
-            <button className="schedule-button button" type="submit">
+            <Link
+              to="/eventForm"
+              className="schedule-button button"
+              type="submit"
+            >
               Schedule
-            </button>
+            </Link>
+
             <button
               className="delete-button button"
               onClick={() => {

@@ -37,6 +37,11 @@ import {
   DELETE_COMMENT_REQUEST,
   DELETE_COMMENT_SUCCESS
 } from '../actions/comment-actions/deleteComments';
+import {
+  POST_EVENT_REQUEST,
+  POST_EVENT_SUCCESS,
+  POST_EVENT_ERROR
+} from '../actions/event-actions/postEvents';
 const initialState = {
   jobs: [],
   editComment: false,
@@ -45,7 +50,6 @@ const initialState = {
 };
 
 export function jobReducer(state = initialState, action) {
-  console.log(state.jobs);
   if (action.type === GET_JOB_REQUEST) {
     return {
       ...state,
@@ -143,7 +147,7 @@ export function jobReducer(state = initialState, action) {
   } else if (action.type === POST_COMMENT_REQUEST) {
     return {
       ...state,
-      loading: true,
+      // loading: true,
       error: null
     };
   } else if (action.type === POST_COMMENT_SUCCESS) {
@@ -190,6 +194,30 @@ export function jobReducer(state = initialState, action) {
       jobs
     };
   } else if (action.type === DELETE_COMMENT_ERROR) {
+    return {
+      ...state,
+      loading: false,
+      error: action.error
+    };
+  } else if (action.type === POST_EVENT_REQUEST) {
+    return {
+      ...state,
+      // loading: true,
+      error: null
+    };
+  } else if (action.type === POST_EVENT_SUCCESS) {
+    const jobs = state.jobs.map(job => {
+      if (job.id === action.jobId) {
+        job.events = [...job.events, action.newEvent];
+      }
+
+      return job;
+    });
+    return {
+      ...state,
+      jobs
+    };
+  } else if (action.type === POST_EVENT_ERROR) {
     return {
       ...state,
       loading: false,
