@@ -44,7 +44,6 @@ import {
 } from '../actions/event-actions/postEvents';
 const initialState = {
   jobs: [],
-  editComment: false,
   loading: false,
   error: null
 };

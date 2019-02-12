@@ -57,7 +57,6 @@ class JobCard extends Component {
               className="comment-button button"
               type="button"
               onClick={this.props.handleSubmit(value => {
-                console.log(value);
                 return this.props.dispatch(postComment(value, this.props.id));
               })}
             >
@@ -67,7 +66,12 @@ class JobCard extends Component {
           </div>
           <div className="schedule-delete-buttons">
             <Link
-              to="/eventForm"
+              to={{
+                pathname: '/eventForm',
+                state: {
+                  jobId: this.props.id
+                }
+              }}
               className="schedule-button button"
               type="submit"
             >
@@ -76,9 +80,9 @@ class JobCard extends Component {
 
             <button
               className="delete-button button"
-              onClick={() => {
+              onClick={this.props.handleSubmit(() => {
                 this.props.dispatch(deleteJob(this.props.id));
-              }}
+              })}
             >
               Delete Job
             </button>

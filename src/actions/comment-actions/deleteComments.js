@@ -17,7 +17,6 @@ export const deleteCommentError = error => ({
 });
 
 export const deleteComment = (commentId, jobId) => (dispatch, getState) => {
-  console.log(commentId);
   const authToken = getState().auth.authToken;
   dispatch(deleteCommentRequest());
   fetch(`${API_BASE_URL}/comments/${commentId}`, {

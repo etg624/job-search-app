@@ -49,7 +49,11 @@ class App extends Component {
         <Route exact path="/home" component={props => <JobList {...props} />} />
         <Route exact path="/signup" component={RegistrationPage} />
         <Route exact path="/edit/:id" component={EditForm} />
-        <Route exact path="/schedule" component={ScheduleCalendar} />
+        <Route
+          exact
+          path="/schedule"
+          component={props => <ScheduleCalendar {...props} />}
+        />
         <Route exact path="/eventForm" component={AddEventForm} />
         <Route
           exact

@@ -10,7 +10,7 @@ import { required } from './auth/validators';
 
 class AddEventForm extends Component {
   onSubmit = values => {
-    this.props.dispatch(postEvent(values));
+    this.props.dispatch(postEvent(values, this.props.location.state.jobId));
     this.props.history.push('/schedule');
   };
 
@@ -21,7 +21,9 @@ class AddEventForm extends Component {
       <div>
         <form
           className="add-job-form"
-          onSubmit={handleSubmit(values => this.onSubmit(values))}
+          onSubmit={handleSubmit(values => {
+            this.onSubmit(values);
+          })}
         >
           <div>
             <label>Event Title</label>
@@ -39,7 +41,7 @@ class AddEventForm extends Component {
             <label>Stat Date</label>
             <div>
               <Field
-                name="startDate"
+                name="start"
                 component="input"
                 type="date"
                 placeholder="Select a start date "
@@ -50,7 +52,7 @@ class AddEventForm extends Component {
           <div>
             <label>End Date</label>
             <div>
-              <Field name="endDate" component="input" type="date" />
+              <Field name="end" component="input" type="date" />
             </div>
           </div>
           <div>
