@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { addJob } from '../actions/job-actions/postJobs';
 import requiresLogin from '../components/auth/requires-login';
 import { withRouter } from 'react-router-dom';
+import Input from './input';
 import './styles/addJob.css';
 import { required } from './auth/validators';
 
@@ -26,7 +27,7 @@ class AddJob extends Component {
             <div>
               <Field
                 name="title"
-                component="input"
+                component={Input}
                 type="text"
                 placeholder="Enter a title"
                 validate={[required]}

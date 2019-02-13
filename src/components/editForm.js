@@ -5,7 +5,6 @@ import requiresLogin from '../components/auth/requires-login';
 import { getJobById } from '../actions/job-actions/getJobById';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { required } from './auth/validators';
 import './styles/editForm.css';
 class EditForm extends Component {
   componentDidMount() {

@@ -5,6 +5,7 @@ import requiresLogin from '../components/auth/requires-login';
 import { withRouter } from 'react-router-dom';
 import './styles/addJob.css';
 import { required } from './auth/validators';
+import Input from './input';
 
 class AddEventForm extends Component {
   onSubmit = values => {
@@ -28,7 +29,7 @@ class AddEventForm extends Component {
             <div>
               <Field
                 name="title"
-                component="input"
+                component={Input}
                 type="text"
                 placeholder="Enter a title"
                 validate={[required]}
@@ -40,9 +41,8 @@ class AddEventForm extends Component {
             <div>
               <Field
                 name="start"
-                component="input"
+                component={Input}
                 type="date"
-                placeholder="Select a start date "
                 validate={[required]}
               />
             </div>
@@ -50,7 +50,12 @@ class AddEventForm extends Component {
           <div>
             <label>End Date</label>
             <div>
-              <Field name="end" component="input" type="date" />
+              <Field
+                name="end"
+                component={Input}
+                validate={[required]}
+                type="date"
+              />
             </div>
           </div>
           <div>
