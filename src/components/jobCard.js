@@ -4,12 +4,14 @@ import { postComment } from '../actions/comment-actions/postComments';
 import { Link } from 'react-router-dom';
 import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
+import moment from 'moment';
 import './styles/card.css';
 export class JobCard extends Component {
   // shouldComponentUpdate(nextProps, nextState) {
   //   return false;
   // }
   render() {
+    console.log(this.props);
     const commentsToRender = this.props.comments || [];
     const comments = commentsToRender.map((comment, i) => {
       return (
@@ -23,6 +25,29 @@ export class JobCard extends Component {
               }
             />
           </span>
+        </li>
+      );
+    });
+
+    const eventsToRender = this.props.events || [];
+    const events = eventsToRender.map((event, i) => {
+      const start = moment(event.start).format('MMMM Do');
+      const end = moment(event.end).format('MMMM Do');
+      if (start === end) {
+        return (
+          <li key={i} className="events-list">
+            <h4>{event.title}</h4>
+            <p>{start}</p>
+          </li>
+        );
+      }
+
+      return (
+        <li key={i} className="events-list">
+          <h4>{event.title}</h4>
+          <p>
+            {start}---{end}
+          </p>
         </li>
       );
     });
@@ -63,6 +88,7 @@ export class JobCard extends Component {
               Post comment
             </button>
             <ul className="comments">{comments}</ul>
+            <ul className="comments">{events}</ul>
           </div>
           <div className="schedule-delete-buttons">
             <Link
