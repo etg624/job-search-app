@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth-actions/auth';
 import { clearAuthToken } from '../local-storage';
 import './styles/header.css';
-class Header extends Component {
+export class Header extends Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();

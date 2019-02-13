@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
 import './styles/card.css';
-class JobCard extends Component {
+export class JobCard extends Component {
   // shouldComponentUpdate(nextProps, nextState) {
   //   return false;
   // }

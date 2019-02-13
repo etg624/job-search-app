@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
     "react": "^16.7.0",
