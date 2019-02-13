@@ -2,7 +2,7 @@
 
 ### Login Page
 
-<img src ="./src/screenshots/login.png" width="48" height="48">
+<img src ="./src/screenshots/login.png" width="200" height="200">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
