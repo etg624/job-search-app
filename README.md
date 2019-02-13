@@ -4,6 +4,34 @@
 
 <img src ="./src/screenshots/login.png" width="400" height="400">
 
+### Register Page
+
+<img src ="./src/screenshots/register.png" width="400" height="400">
+
+### Welcome Page
+
+<img src ="./src/screenshots/landing.png" width="400" height="400">
+
+### Job List Page
+
+<img src ="./src/screenshots/job.png" width="400" height="400">
+
+### Comment Added to Job
+
+<img src ="./src/screenshots/comment.png" width="400" height="400">
+
+### Create an Event Page
+
+<img src ="./src/screenshots/schedule.png" width="400" height="400">
+
+### Calendar Page Showing all Events
+
+<img src ="./src/screenshots/calendar.png" width="400" height="400">
+
+### Agenda Page
+
+<img src ="./src/screenshots/agenda.png" width="400" height="400">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
