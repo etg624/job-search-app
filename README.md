@@ -2,7 +2,7 @@
 
 ### Login Page
 
-![Image of login page](./src/screenshots/login.png)
+![Image of login page](./src/screenshots/login.png =100x100)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
