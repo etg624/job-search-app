@@ -30,12 +30,12 @@ label {
   text-align: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1160px) {
   .registration-form {
     width: 40%;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 475px) {
   .registration-form {
     width: 70%;
   }

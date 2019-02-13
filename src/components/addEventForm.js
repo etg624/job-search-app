@@ -1,5 +1,3 @@
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { postEvent } from '../actions/event-actions/postEvents';

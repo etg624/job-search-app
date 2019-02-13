@@ -38,7 +38,7 @@ class ScheduleCalendar extends Component {
           style={{
             height: '60vh',
             padding: '40px',
-            width: '70%',
+            width: '90%',
             margin: '0 auto'
           }}
         />

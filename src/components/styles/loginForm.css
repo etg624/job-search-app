@@ -30,13 +30,19 @@ label {
   text-align: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .login-form {
-    width: 40%;
+    width: 30%;
   }
 }
 @media (max-width: 350px) {
   .login-form {
     width: 70%;
+  }
+}
+
+@media (max-width: 475px) {
+  .login-form {
+    width: 60%;
   }
 }

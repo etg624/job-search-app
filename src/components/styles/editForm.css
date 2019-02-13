@@ -20,13 +20,24 @@
   margin: 6px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .edit-form {
-    width: 40%;
+    width: 30%;
   }
 }
 @media (max-width: 350px) {
   .edit-form {
     width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .edit-form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 475px) {
+  .edit-form {
+    width: 60%;
   }
 }
