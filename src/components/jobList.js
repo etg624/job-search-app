@@ -15,14 +15,14 @@ class JobList extends Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return (
+        <div className="loading">
+          <ClipLoader />
+        </div>
+      );
+    }
     const jobs = this.props.jobs.map((props, index) => {
-      if (this.props.loading) {
-        return (
-          <div key={index} className="loading">
-            <ClipLoader />
-          </div>
-        );
-      }
       return (
         <li key={index}>
           <JobCard {...props} form={`${index}jobForm`} />
