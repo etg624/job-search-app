@@ -2,7 +2,7 @@
 
 ### Login Page
 
-![Image of login page]('./screenshots/login.png')
+![Image of login page](/Users/evanguirino/thinkful/job-search/src/screenshots/login.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
