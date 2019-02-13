@@ -15,13 +15,12 @@ class ScheduleCalendar extends Component {
   }
 
   render() {
-    const calendar = this.refs.calendar;
-    console.log(calendar);
     const events = this.props.jobs.reduce((arr, job) => {
       const eventsArr = job.events.map(event => {
+        console.log(event.start);
         return {
-          start: moment(event.start).add(12, 'hours'),
-          end: moment(event.end).add(12, 'hours'),
+          start: moment(event.start).add(24, 'hours'),
+          end: moment(event.end).add(24, 'hours'),
           title: event.title
         };
       });

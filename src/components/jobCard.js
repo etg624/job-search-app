@@ -31,8 +31,12 @@ export class JobCard extends Component {
 
     const eventsToRender = this.props.events || [];
     const events = eventsToRender.map((event, i) => {
-      const start = moment(event.start).format('MMMM Do');
-      const end = moment(event.end).format('MMMM Do');
+      const start = moment(event.start)
+        .add(12, 'hours')
+        .format('MMMM Do');
+      const end = moment(event.end)
+        .add(12, 'hours')
+        .format('MMMM Do');
       if (start === end) {
         return (
           <li key={i} className="events-list">
