@@ -1,5 +1,9 @@
 # Checkout a demo at [searchule.com](https://searchule.herokuapp.com/)
 
+### Login Page
+
+![Image of login page](./screenshots/login.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
