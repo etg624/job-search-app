@@ -18,7 +18,6 @@ export const getJobError = error => ({
 });
 
 export const fetchJobs = jobs => (dispatch, getState) => {
-  console.log(getState());
   const authToken = getState().auth.authToken;
   dispatch(getJobRequest());
 

@@ -20,7 +20,7 @@ export const deleteJobError = error => ({
 export const deleteJob = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(deleteJobRequest());
-  fetch(`${API_BASE_URL}/jobs/${id}`, {
+  return fetch(`${API_BASE_URL}/jobs/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

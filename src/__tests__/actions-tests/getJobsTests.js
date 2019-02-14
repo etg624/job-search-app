@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../setupTest';
 import { API_BASE_URL } from '../../config';
 import {
@@ -58,7 +57,6 @@ describe('getJobRequest', () => {
         };
       });
       return fetchJobs()(dispatch, getState).then(() => {
-        console.log(fetch);
         expect(fetch).toHaveBeenCalledWith(`${API_BASE_URL}/jobs`, {
           method: 'GET',
           headers: {
@@ -66,6 +64,7 @@ describe('getJobRequest', () => {
             'Content-Type': 'application/json'
           }
         });
+        expect(dispatch).toHaveBeenCalledWith(getJobSuccess(jobs));
       });
     });
   });

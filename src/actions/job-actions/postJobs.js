@@ -20,7 +20,7 @@ export const addJobError = error => ({
 export const addJob = newJob => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(addJobRequest());
-  fetch(`${API_BASE_URL}/jobs`, {
+  return fetch(`${API_BASE_URL}/jobs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -32,9 +32,9 @@ export const addJob = newJob => (dispatch, getState) => {
       if (!res.ok) {
         return res.json().then(err => Promise.reject(err));
       }
-
-      return res.json().then(data => dispatch(addJobSuccess(data)));
+      return res.json();
     })
+    .then(data => dispatch(addJobSuccess(data)))
     .catch(err => {
       dispatch(addJobError(err));
     });
