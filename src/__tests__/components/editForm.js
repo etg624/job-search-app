@@ -1,6 +1,6 @@
 import React from 'react';
-import '../setupTest';
-import EditForm from '../components/editForm';
+import '../../setupTest';
+import EditForm from '../../components/editForm';
 import { shallow } from 'enzyme';
 
 describe('<EditForm />', () => {

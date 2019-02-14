@@ -17,7 +17,6 @@ class ScheduleCalendar extends Component {
   render() {
     const events = this.props.jobs.reduce((arr, job) => {
       const eventsArr = job.events.map(event => {
-        console.log(event.start);
         return {
           start: moment(event.start).add(24, 'hours'),
           end: moment(event.end).add(24, 'hours'),

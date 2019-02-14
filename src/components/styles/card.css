@@ -94,3 +94,16 @@
 .button:focus {
   outline: thin dotted;
 }
+
+.events {
+  padding: 10px 20px 15px 20px;
+  list-style: none;
+}
+
+.events > li {
+  padding-bottom: 12px;
+}
+
+.event-dates {
+  font-size: 12px;
+}

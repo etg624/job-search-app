@@ -1,6 +1,6 @@
 import React from 'react';
-import '../setupTest';
-import AddJob from '../components/addJob';
+import '../../setupTest';
+import AddJob from '../../components/addJob';
 import { shallow } from 'enzyme';
 
 describe('<AddJob />', () => {

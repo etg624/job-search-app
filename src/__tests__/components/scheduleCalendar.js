@@ -1,6 +1,6 @@
 import React from 'react';
-import '../setupTest';
-import ScheduleCalendar from '../components/scheduleCalendar';
+import '../../setupTest';
+import ScheduleCalendar from '../../components/scheduleCalendar';
 import { shallow } from 'enzyme';
 
 describe('<ScheduleCalendar />', () => {

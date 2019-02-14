@@ -11,7 +11,6 @@ export class JobCard extends Component {
   //   return false;
   // }
   render() {
-    console.log(this.props);
     const commentsToRender = this.props.comments || [];
     const comments = commentsToRender.map((comment, i) => {
       return (
@@ -41,7 +40,7 @@ export class JobCard extends Component {
         return (
           <li key={i} className="events-list">
             <h4>{event.title}</h4>
-            <p>{start}</p>
+            <p className="event-dates">{start}</p>
           </li>
         );
       }
@@ -49,8 +48,8 @@ export class JobCard extends Component {
       return (
         <li key={i} className="events-list">
           <h4>{event.title}</h4>
-          <p>
-            {start}---{end}
+          <p className="event-dates">
+            {start} &mdash; {end}
           </p>
         </li>
       );
@@ -92,7 +91,7 @@ export class JobCard extends Component {
               Post comment
             </button>
             <ul className="comments">{comments}</ul>
-            <ul className="comments">{events}</ul>
+            <ul className="events">{events}</ul>
           </div>
           <div className="schedule-delete-buttons">
             <Link

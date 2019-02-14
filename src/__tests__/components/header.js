@@ -1,6 +1,6 @@
 import React from 'react';
-import '../setupTest';
-import { Header } from '../components/header';
+import '../../setupTest';
+import { Header } from '../../components/header';
 import { shallow, mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 
