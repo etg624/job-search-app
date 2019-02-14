@@ -29,7 +29,6 @@ describe('<Header />', () => {
     );
 
     const logoutButton = wrapper.find('.logout').text();
-    console.log(logoutButton);
 
     expect(logoutButton).toEqual('Log Out');
   });

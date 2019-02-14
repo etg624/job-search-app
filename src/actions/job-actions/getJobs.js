@@ -18,10 +18,11 @@ export const getJobError = error => ({
 });
 
 export const fetchJobs = jobs => (dispatch, getState) => {
+  console.log(getState());
   const authToken = getState().auth.authToken;
   dispatch(getJobRequest());
 
-  fetch(`${API_BASE_URL}/jobs`, {
+  return fetch(`${API_BASE_URL}/jobs`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${authToken}`,

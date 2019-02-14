@@ -56,6 +56,7 @@ export function jobReducer(state = initialState, action) {
       error: null
     };
   } else if (action.type === GET_JOB_SUCCESS) {
+    console.log(action.jobs);
     return {
       ...state,
       jobs: action.jobs,
