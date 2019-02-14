@@ -7,9 +7,6 @@ import { deleteComment } from '../actions/comment-actions/deleteComments';
 import moment from 'moment';
 import './styles/card.css';
 export class JobCard extends Component {
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return false;
-  // }
   render() {
     const commentsToRender = this.props.comments || [];
     const comments = commentsToRender.map((comment, i) => {

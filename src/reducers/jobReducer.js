@@ -31,7 +31,7 @@ import {
   POST_COMMENT_SUCCESS,
   POST_COMMENT_ERROR
 } from '../actions/comment-actions/postComments';
-import { EDIT_COMMENT_BUTTON } from '../actions/comment-actions/editComment';
+
 import {
   DELETE_COMMENT_ERROR,
   DELETE_COMMENT_REQUEST,
@@ -74,9 +74,10 @@ export function jobReducer(state = initialState, action) {
       error: null
     };
   } else if (action.type === ADD_JOB_SUCCESS) {
+    console.log('hello');
     return {
-      ...state
-      // jobs: action.newJob
+      ...state,
+      jobs: [...state.jobs, action.newJob]
     };
   } else if (action.type === ADD_JOB_ERROR) {
     return {
@@ -166,11 +167,6 @@ export function jobReducer(state = initialState, action) {
       ...state,
       loading: false,
       error: action.error
-    };
-  } else if (action.type === EDIT_COMMENT_BUTTON) {
-    return {
-      ...state,
-      editComment: !state.editComment
     };
   } else if (action.type === DELETE_COMMENT_REQUEST) {
     return {
