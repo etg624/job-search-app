@@ -61,10 +61,10 @@
   }
 
   .pics {
-    margin-top: 20px;
-    align-self: center;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .cardImg {

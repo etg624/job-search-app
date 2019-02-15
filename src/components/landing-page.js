@@ -26,22 +26,22 @@ export function LandingPage(props) {
             with an employer.
           </p>
         </section>
-
-        <div className="pics ">
-          <img
-            className="pic calendarImg"
-            src={calendarWithEvents}
-            alt="a calendar with events"
-          />
-          <img
-            className="pic cardImg"
-            src={jobCards}
-            alt="multiple cards with descriptions of jobs"
-          />
-        </div>
       </div>
 
       <LoginForm />
+
+      <div className="pics ">
+        <img
+          className="pic calendarImg"
+          src={calendarWithEvents}
+          alt="a calendar with events"
+        />
+        <img
+          className="pic cardImg"
+          src={jobCards}
+          alt="multiple cards with descriptions of jobs"
+        />
+      </div>
     </div>
   );
 }
