@@ -25,7 +25,7 @@ class EditForm extends Component {
         onSubmit={handleSubmit(values => this.onSubmit(values))}
       >
         <div>
-          <label>Job Title</label>
+          <label htmlFor="title">Job Title</label>
           <div>
             <Field
               name="title"
@@ -36,7 +36,7 @@ class EditForm extends Component {
           </div>
         </div>
         <div>
-          <label>Description</label>
+          <label htmlFor="description">Description</label>
           <div>
             <Field
               name="description"
@@ -47,7 +47,7 @@ class EditForm extends Component {
           </div>
         </div>
         <div>
-          <label>Location</label>
+          <label htmlFor="location">Location</label>
           <div>
             <Field
               name="location"
@@ -58,7 +58,7 @@ class EditForm extends Component {
           </div>
         </div>
         <div>
-          <label>Pay</label>
+          <label htmlFor="pay">Pay</label>
           <div>
             <Field
               name="pay"

@@ -26,8 +26,8 @@ class AddEventForm extends Component {
           })}
         >
           <div>
-            <label>Event Title</label>
             <div>
+              <label htmlFor="title">Event Title</label>
               <Field
                 name="title"
                 component={Input}
@@ -38,8 +38,8 @@ class AddEventForm extends Component {
             </div>
           </div>
           <div>
-            <label>Stat Date</label>
             <div>
+              <label htmlFor="start">Stat Date</label>
               <Field
                 name="start"
                 component={Input}
@@ -49,8 +49,8 @@ class AddEventForm extends Component {
             </div>
           </div>
           <div>
-            <label>End Date</label>
             <div>
+              <label htmlFor="end">End Date</label>
               <Field
                 name="end"
                 component={Input}

@@ -99,7 +99,9 @@ export class JobCard extends Component {
         </section>
         <form className="job-form">
           <div className="comment-container">
+            <label htmlFor="post-comment" />
             <Field
+              id="post-comment"
               className="comment-input"
               name="content"
               component="input"
@@ -130,7 +132,7 @@ export class JobCard extends Component {
               className="schedule-button button"
               type="submit"
             >
-              Schedule
+              Create Event
             </Link>
 
             <button

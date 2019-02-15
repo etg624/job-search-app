@@ -24,8 +24,8 @@ class AddJob extends Component {
           onSubmit={handleSubmit(values => this.onSubmit(values))}
         >
           <div>
-            <label>Job Title</label>
             <div>
+              <label htmlFor="title">Job Title</label>
               <Field
                 name="title"
                 component={Input}
@@ -36,7 +36,7 @@ class AddJob extends Component {
             </div>
           </div>
           <div>
-            <label>Description</label>
+            <label htmlFor="description">Description</label>
             <div>
               <Field
                 name="description"
@@ -47,7 +47,7 @@ class AddJob extends Component {
             </div>
           </div>
           <div>
-            <label>Location</label>
+            <label htmlFor="location">Location</label>
             <div>
               <Field
                 name="location"
@@ -58,7 +58,7 @@ class AddJob extends Component {
             </div>
           </div>
           <div>
-            <label>Pay</label>
+            <label htmlFor="pay">Pay</label>
             <div>
               <Field
                 name="pay"
