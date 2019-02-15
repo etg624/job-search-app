@@ -9,8 +9,9 @@ import { required } from './auth/validators';
 
 class AddJob extends Component {
   onSubmit = values => {
-    this.props.dispatch(addJob(values));
-    this.props.history.push('/home');
+    this.props
+      .dispatch(addJob(values))
+      .then(() => this.props.history.push('/home'));
   };
 
   render() {

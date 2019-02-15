@@ -12,8 +12,9 @@ class EditForm extends Component {
   }
 
   onSubmit = values => {
-    this.props.dispatch(updateJob(this.props.match.params.id, values));
-    this.props.history.push('/home');
+    this.props
+      .dispatch(updateJob(this.props.match.params.id, values))
+      .then(() => this.props.history.push('/home'));
   };
 
   render() {

@@ -203,7 +203,7 @@ export function jobReducer(state = initialState, action) {
   } else if (action.type === POST_EVENT_REQUEST) {
     return {
       ...state,
-      // loading: true,
+      loading: true,
       error: null
     };
   } else if (action.type === POST_EVENT_SUCCESS) {

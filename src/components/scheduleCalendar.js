@@ -15,6 +15,7 @@ class ScheduleCalendar extends Component {
   }
 
   render() {
+    console.log(this.props);
     const events = this.props.jobs.reduce((arr, job) => {
       const eventsArr = job.events.map(event => {
         return {
@@ -33,7 +34,6 @@ class ScheduleCalendar extends Component {
           ref="calendar"
           localizer={localizer}
           defaultDate={new Date()}
-          selectable={true}
           popup={true}
           views={['month', 'agenda']}
           defaultView="month"

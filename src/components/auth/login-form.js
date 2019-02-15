@@ -49,7 +49,9 @@ export class LoginForm extends React.Component {
           Log in
         </button>
 
-        <Link to="/signup">Sign Up</Link>
+        <Link role="link" to="/signup">
+          Sign Up
+        </Link>
       </form>
     );
   }

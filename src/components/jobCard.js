@@ -34,12 +34,17 @@ export class JobCard extends Component {
       const end = moment(event.end)
         .add(12, 'hours')
         .format('MMMM Do');
+
+      if (start > end) {
+        return;
+      }
+
       if (start === end) {
         return (
           <li key={i} className="events-list">
             <h4>{event.title}</h4>
             <p className="event-dates">
-              {start}{' '}
+              {start}
               <span>
                 <i
                   className="fas fa-trash-alt"
@@ -76,7 +81,11 @@ export class JobCard extends Component {
         <section>
           <header className="job-header">
             <h2 className="job-title">{this.props.title}</h2>
-            <Link className="edit-link" to={`/edit/${this.props.id}`}>
+            <Link
+              role="link"
+              className="edit-link"
+              to={`/edit/${this.props.id}`}
+            >
               Edit Job
             </Link>
           </header>
@@ -111,6 +120,7 @@ export class JobCard extends Component {
           </div>
           <div className="schedule-delete-buttons">
             <Link
+              role="link"
               to={{
                 pathname: '/eventForm',
                 state: {

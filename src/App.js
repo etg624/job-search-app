@@ -10,6 +10,7 @@ import AddJob from './components/addJob';
 import ScheduleCalendar from './components/scheduleCalendar';
 import EditForm from './components/editForm';
 import AddEventForm from './components/addEventForm';
+
 import './App.css';
 class App extends Component {
   componentDidUpdate(prevProps) {

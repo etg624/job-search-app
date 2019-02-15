@@ -9,8 +9,9 @@ import Input from './input';
 
 class AddEventForm extends Component {
   onSubmit = values => {
-    this.props.dispatch(postEvent(values, this.props.location.state.jobId));
-    this.props.history.push('/home');
+    this.props
+      .dispatch(postEvent(values, this.props.location.state.jobId))
+      .then(() => this.props.history.push('/home'));
   };
 
   render() {

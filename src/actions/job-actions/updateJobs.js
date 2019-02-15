@@ -21,7 +21,7 @@ export const updateJob = (id, updatedJob) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(updateJobRequest());
 
-  fetch(`${API_BASE_URL}/jobs/${id}`, {
+  return fetch(`${API_BASE_URL}/jobs/${id}`, {
     method: 'PUT',
     body: JSON.stringify(updatedJob),
     headers: {

@@ -25,7 +25,7 @@ export const postEvent = (event, jobId) => (dispatch, getState) => {
     event
   };
   dispatch(postEventRequest());
-  fetch(`${API_BASE_URL}/events`, {
+  return fetch(`${API_BASE_URL}/events`, {
     method: 'POST',
     body: JSON.stringify(newEvent),
     headers: {
