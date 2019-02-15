@@ -79,7 +79,7 @@ If the user does not have any jobs added to their list, they will be greeted wit
 
 Once the user has added a job, a list of job cards will populate the page. The cards provide data from the form that they completed to add the job. The user can also write a comment about the job and create events regarding a particular job
 
-<img src ="./src/screenshots/jobCards.png" width="400" height="400">
+<img src ="./src/screenshots/jobCards.png" width="500" height="400">
 
 ### Comment Added to Job
 
