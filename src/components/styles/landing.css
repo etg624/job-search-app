@@ -13,6 +13,7 @@
   padding: 30px;
   width: 50%;
   margin: 35px auto;
+  position: relative;
 }
 
 .app-description h3 {
@@ -20,6 +21,9 @@
   color: #562855;
   font-size: 26px;
   margin-bottom: 12px;
+}
+
+.section {
 }
 
 .description-pic-container {
@@ -34,7 +38,7 @@
   display: flex;
 }
 .pic {
-  width: 400px;
+  width: 360px;
   height: 200px;
   border-radius: 6px;
   -webkit-box-shadow: 10px 19px 52px -5px rgba(82, 52, 82, 0.35);
@@ -43,7 +47,7 @@
 }
 
 .calendarImg {
-  margin: 15px 20px 0 0;
+  margin: 25px 20px 0 0;
 }
 
 @media (max-width: 1000) {
@@ -73,7 +77,19 @@
     font-size: 15;
   }
   .pic {
-    width: 320px;
-    height: 120px;
+    width: 250px;
+    height: 125px;
+    margin: 10px auto;
+  }
+
+  .app-description {
+    line-height: 125%;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 80%;
+    margin: 35px auto;
+    position: relative;
   }
 }

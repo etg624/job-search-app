@@ -17,14 +17,16 @@ export function LandingPage(props) {
     <div className="home-container">
       <PreLoginHeader />
       <div className="app-description">
-        <h3>Organize your job search</h3>
+        <section className="section">
+          <h3>Organize your job search</h3>
+          <p>
+            Begin searching for your new career and add potential job
+            opportunities to your list of jobs, then create events for each job,
+            such as the date of an interview, or create a reminder to follow up
+            with an employer.
+          </p>
+        </section>
 
-        <p>
-          Begin searching for your new career and add potential job
-          opportunities to your list of jobs, then create events for each job,
-          such as the date of an interview, or create a reminder to follow up
-          with an employer.
-        </p>
         <div className="pics ">
           <img
             className="pic calendarImg"
