@@ -28,7 +28,7 @@ The user can also add comments to each job for anything such as addresses, phone
 - All routes can be found at `/routes/<route-name>`
 - The github repo for all the backend code can be found [here](https://github.com/etg624/job-search-server)
 
-  **`<App />`** located @ `/src/App`
+#### `<App />` located @ `/src/App`
 
 **The `<App />` component is the main component.**
 
