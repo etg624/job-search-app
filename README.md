@@ -28,14 +28,15 @@ located @ `/src/App`
 - It also checks for `JWT` auth.
 
 **Components Used**
-`<Header />` located @ `/src/components/header`
-`<LandingPage />` located @ `/src/components/landing-page`
-`<JobList />` located @ `/src/components/jobList`
-`<RegistrationPage />` located @ `/src/components/auth/registration-page`
-`<AddJob />` located @ `/src/components/addJob`
-`<ScheduleCalendar />` located @ `/src/components/scheduleCalendar`
-`<EditForm />` located @ `/src/components/editForm`
-`<AddEventForm />` located @ `/src/components/addEventForm`
+
+- `<Header />` located @ `/src/components/header`
+- `<LandingPage />` located @ `/src/components/landing-page`
+- `<JobList />` located @ `/src/components/jobList`
+- `<RegistrationPage />` located @ `/src/components/auth/registration-page`
+- `<AddJob />` located @ `/src/components/addJob`
+- `<ScheduleCalendar />` located @ `/src/components/scheduleCalendar`
+- `<EditForm />` located @ `/src/components/editForm`
+- `<AddEventForm />` located @ `/src/components/addEventForm`
 
 ### Landing Page
 
