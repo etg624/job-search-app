@@ -7,7 +7,6 @@ import AddJob from './addJob';
 import requiresLogin from '../components/auth/requires-login';
 import './styles/job-list.css';
 import ClipLoader from 'react-spinners/ClipLoader';
-import withLoading from '../HOC/withLoading';
 
 class JobList extends Component {
   componentDidMount() {
