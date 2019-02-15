@@ -4,11 +4,13 @@ This app allows you to mitigate the stresses of a career search
 By allowing users to add potential jobs to their dashboard and create an event based on that job. Events can include anything from calling a potential employer to what day their interview is at.
 The user can also add comments to each job for anything such as addresses, phone numbers, and names.
 
-`Tech Stack`
+### `Tech Stack`
+
 **Front End**
 
 - React
 - Redux
+
 - React-Big-Calendar
 
 **Back End**
@@ -18,7 +20,7 @@ The user can also add comments to each job for anything such as addresses, phone
 - Passport
 - Bcryptjs
 
-## <App />
+## `<App />`
 
 located @ `/src/App`
 
