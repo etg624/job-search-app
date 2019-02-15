@@ -10,8 +10,11 @@ The user can also add comments to each job for anything such as addresses, phone
 
 - React
 - Redux
-
+- Redux-Form
+- Redux-Thunk
 - React-Big-Calendar
+- momentJs
+- React-Router-DOM
 
 **Back End**
 
@@ -20,9 +23,12 @@ The user can also add comments to each job for anything such as addresses, phone
 - Passport
 - Bcryptjs
 
-## `<App />`
+- The main server app can be found at `/server`
+- All models can be found at `/models/<model-name>`
+- All routes can be found at `/routes/<route-name>`
+- The github repo for all the backend code can be found [here](https://github.com/etg624/job-search-server)
 
-located @ `/src/App`
+  **`<App />`** located @ `/src/App`
 
 **The `<App />` component is the main component.**
 
