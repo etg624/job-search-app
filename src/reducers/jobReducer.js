@@ -42,6 +42,13 @@ import {
   POST_EVENT_SUCCESS,
   POST_EVENT_ERROR
 } from '../actions/event-actions/postEvents';
+
+import {
+  DELETE_EVENT_ERROR,
+  DELETE_EVENT_REQUEST,
+  DELETE_EVENT_SUCCESS
+} from '../actions/event-actions/deleteEvents';
+
 const initialState = {
   jobs: [],
   loading: false,
@@ -74,7 +81,6 @@ export function jobReducer(state = initialState, action) {
       error: null
     };
   } else if (action.type === ADD_JOB_SUCCESS) {
-    console.log('hello');
     return {
       ...state,
       jobs: [...state.jobs, action.newJob]
@@ -213,6 +219,31 @@ export function jobReducer(state = initialState, action) {
       jobs
     };
   } else if (action.type === POST_EVENT_ERROR) {
+    return {
+      ...state,
+      loading: false,
+      error: action.error
+    };
+  } else if (action.type === DELETE_EVENT_REQUEST) {
+    return {
+      ...state,
+      // loading: true,
+      error: null
+    };
+  } else if (action.type === DELETE_EVENT_SUCCESS) {
+    const jobs = state.jobs.map(job => {
+      if (job.id === action.jobId) {
+        job.events = job.events.filter(
+          event => event.id !== action.deletedEventId
+        );
+      }
+      return job;
+    });
+    return {
+      ...state,
+      jobs
+    };
+  } else if (action.type === DELETE_EVENT_ERROR) {
     return {
       ...state,
       loading: false,

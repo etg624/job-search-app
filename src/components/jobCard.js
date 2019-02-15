@@ -4,6 +4,7 @@ import { postComment } from '../actions/comment-actions/postComments';
 import { Link } from 'react-router-dom';
 import { deleteJob } from '../actions/job-actions/deleteJob';
 import { deleteComment } from '../actions/comment-actions/deleteComments';
+import { deleteEvent } from '../actions/event-actions/deleteEvents';
 import moment from 'moment';
 import './styles/card.css';
 export class JobCard extends Component {
@@ -43,7 +44,7 @@ export class JobCard extends Component {
                 <i
                   className="fas fa-trash-alt"
                   onClick={() =>
-                    this.props.dispatch(deleteComment(event.id, this.props.id))
+                    this.props.dispatch(deleteEvent(event.id, this.props.id))
                   }
                 />
               </span>
@@ -61,7 +62,7 @@ export class JobCard extends Component {
               <i
                 className="fas fa-trash-alt"
                 onClick={() =>
-                  this.props.dispatch(deleteComment(event.id, this.props.id))
+                  this.props.dispatch(deleteEvent(event.id, this.props.id))
                 }
               />
             </span>
