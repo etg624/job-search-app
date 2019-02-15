@@ -87,6 +87,12 @@ Once the user has added a job, a list of job cards will populate the page. The c
 
 ### Create an Event Page
 
+**Components Used**
+
+- `<AddEventForm />` located @ `/src/components/addEventForm`
+
+Here the user will be required to add a title, a stat date, and an end date for an event
+
 <img src ="./src/screenshots/schedule.png" width="400" height="400">
 
 ### Calendar Page Showing all Events
