@@ -36,7 +36,7 @@ export class JobCard extends Component {
         .format('MMMM Do');
 
       if (start > end) {
-        return;
+        return '';
       }
 
       if (start === end) {
