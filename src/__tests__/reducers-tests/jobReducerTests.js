@@ -56,7 +56,7 @@ describe('jobReducer', () => {
       };
 
       const state = jobReducer(undefined, addJobSuccess(newJob));
-      console.log(state);
+
       expect(state).toEqual({ jobs: [newJob], loading: false, error: null });
     });
   });

@@ -15,7 +15,6 @@ class ScheduleCalendar extends Component {
   }
 
   render() {
-    console.log(this.props);
     const events = this.props.jobs.reduce((arr, job) => {
       const eventsArr = job.events.map(event => {
         return {
