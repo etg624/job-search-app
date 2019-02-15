@@ -1,0 +1,79 @@
+.home-container {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.app-description {
+  line-height: 150%;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 50%;
+  margin: 35px auto;
+}
+
+.app-description h3 {
+  font-family: 'Permanent Marker';
+  color: #562855;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.description-pic-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.pics {
+  margin-top: 20px;
+  align-self: center;
+  display: flex;
+}
+.pic {
+  width: 400px;
+  height: 200px;
+  border-radius: 6px;
+  -webkit-box-shadow: 10px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  -moz-box-shadow: 10px 19px 52px -5px rgba(82, 52, 82, 0.35);
+  box-shadow: 10px 19px 52px -5px rgba(82, 52, 82, 0.35);
+}
+
+.calendarImg {
+  margin: 15px 20px 0 0;
+}
+
+@media (max-width: 1000) {
+  .app-description {
+    widows: 30%;
+  }
+}
+@media (max-width: 800px) {
+  .home-container {
+    width: 100vw;
+  }
+
+  .pics {
+    margin-top: 20px;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cardImg {
+    margin: 15px 20px 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .app-description h1 {
+    font-size: 15;
+  }
+  .pic {
+    width: 320px;
+    height: 120px;
+  }
+}

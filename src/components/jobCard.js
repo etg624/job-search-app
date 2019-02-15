@@ -37,7 +37,17 @@ export class JobCard extends Component {
         return (
           <li key={i} className="events-list">
             <h4>{event.title}</h4>
-            <p className="event-dates">{start}</p>
+            <p className="event-dates">
+              {start}{' '}
+              <span>
+                <i
+                  className="fas fa-trash-alt"
+                  onClick={() =>
+                    this.props.dispatch(deleteComment(event.id, this.props.id))
+                  }
+                />
+              </span>
+            </p>
           </li>
         );
       }
@@ -47,6 +57,14 @@ export class JobCard extends Component {
           <h4>{event.title}</h4>
           <p className="event-dates">
             {start} &mdash; {end}
+            <span>
+              <i
+                className="fas fa-trash-alt"
+                onClick={() =>
+                  this.props.dispatch(deleteComment(event.id, this.props.id))
+                }
+              />
+            </span>
           </p>
         </li>
       );

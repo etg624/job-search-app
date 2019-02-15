@@ -51,23 +51,6 @@ input[type='text'] {
   font-family: 'Montserrat', sans-serif;
 }
 
-.app-description {
-  line-height: 150%;
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  width: 50%;
-  margin: 35px auto;
-  position: relative;
-}
-
-.app-description h3 {
-  font-family: 'Permanent Marker';
-  color: #562855;
-  margin-bottom: 12px;
-}
-
 /* .app-description p {
   position: absolute;
   bot
@@ -84,10 +67,4 @@ input[type='text'] {
   justify-content: center;
   height: 100vh;
   align-items: center;
-}
-
-@media (max-width: 1000) {
-  .app-description {
-    widows: 30%;
-  }
 }

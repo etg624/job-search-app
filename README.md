@@ -1,4 +1,4 @@
-# 🤘 Checkout a demo at [searchule.com](https://searchule.herokuapp.com/)
+# 🤘 Check a demo out at [searchule.com](https://searchule.herokuapp.com/)
 
 This app allows you to mitigate the stresses of a career search
 By allowing users to add potential jobs to their dashboard and create an event based on that job. Events can include anything from calling a potential employer to what day their interview is at.

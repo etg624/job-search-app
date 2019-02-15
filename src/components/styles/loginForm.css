@@ -13,7 +13,7 @@
   border-top-style: outset;
   border-top-color: #d3c9d8;
 
-  margin: 15px auto;
+  margin: 5px auto;
 }
 
 label {
@@ -33,6 +33,11 @@ label {
 @media (max-width: 1100px) {
   .login-form {
     width: 30%;
+  }
+}
+@media (max-width: 600px) {
+  .login-form {
+    width: 50%;
   }
 }
 @media (max-width: 350px) {
