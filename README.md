@@ -10,7 +10,7 @@ The user can also add comments to each job for anything such as addresses, phone
 
 - For the server make sure you have a local mongodb server running. Also, make sure you `npm install` after cding into the project directory. Run `node server.js` or just `nodemon` (if you have nodemon installed) and that will start the back end.
 
-- For the client side make sure you cd into the project directory and `npm install`. After waiting for the project to install run `npm start` and `http://localhost:3000` should open in your browser and voilà 💃 🕺
+- For the client side make sure you cd into the project directory and `npm install`. After waiting for the project to install run `npm start` and `http://localhost:3000` should open with the app in your browser and voilà 💃 🕺
 
 ### `Tech Stack`
 
