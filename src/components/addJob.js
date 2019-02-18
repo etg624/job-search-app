@@ -24,50 +24,53 @@ class AddJob extends Component {
           onSubmit={handleSubmit(values => this.onSubmit(values))}
         >
           <div>
-            <div>
-              <label htmlFor="title">Job Title</label>
-              <Field
-                name="title"
-                component={Input}
-                type="text"
-                placeholder="Enter a title"
-                validate={[required]}
-              />
-            </div>
+            <label htmlFor="title">Job Title</label>
+            <Field
+              id="title"
+              name="title"
+              component={Input}
+              type="text"
+              placeholder="Enter a title"
+              validate={[required]}
+            />
           </div>
+
           <div>
             <label htmlFor="description">Description</label>
-            <div>
-              <Field
-                name="description"
-                component="input"
-                type="text"
-                placeholder="Enter a description about this job"
-              />
-            </div>
+
+            <Field
+              id="description"
+              name="description"
+              component="input"
+              type="text"
+              placeholder="Enter a description about this job"
+            />
           </div>
+
           <div>
             <label htmlFor="location">Location</label>
-            <div>
-              <Field
-                name="location"
-                component="input"
-                type="text"
-                placeholder="Where is your the job?"
-              />
-            </div>
+
+            <Field
+              id="location"
+              name="location"
+              component="input"
+              type="text"
+              placeholder="Where is the job?"
+            />
           </div>
+
           <div>
             <label htmlFor="pay">Pay</label>
-            <div>
-              <Field
-                name="pay"
-                component="input"
-                type="text"
-                placeholder="How much does the job pay?"
-              />
-            </div>
+
+            <Field
+              id="pay"
+              name="pay"
+              component="input"
+              type="text"
+              placeholder="How much does the job pay?"
+            />
           </div>
+
           <div>
             <button
               className="form-button"

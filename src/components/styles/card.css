@@ -91,10 +91,6 @@
   opacity: 0.7;
 }
 
-.button:focus {
-  outline: thin dotted;
-}
-
 .events {
   padding: 10px 20px 15px 20px;
   list-style: none;

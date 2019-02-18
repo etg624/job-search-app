@@ -110,7 +110,7 @@ export class JobCard extends Component {
             />
             <button
               className="comment-button button"
-              type="button"
+              type="submit"
               onClick={this.props.handleSubmit(value => {
                 return this.props.dispatch(postComment(value, this.props.id));
               })}
@@ -130,7 +130,7 @@ export class JobCard extends Component {
                 }
               }}
               className="schedule-button button"
-              type="submit"
+              type="button"
             >
               Create Event
             </Link>

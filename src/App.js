@@ -44,8 +44,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <Header />
+      <main className="app">
+        <header>
+          <Header />
+        </header>
+
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/home" component={props => <JobList {...props} />} />
         <Route exact path="/signup" component={RegistrationPage} />
@@ -63,7 +66,7 @@ class App extends Component {
             return <AddJob {...props} />;
           }}
         />
-      </div>
+      </main>
     );
   }
 }

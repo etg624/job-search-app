@@ -27,8 +27,12 @@ button:hover {
   opacity: 0.7;
 }
 
-button:focus {
-  outline: thin dotted;
+label {
+  display: block;
+}
+
+fieldset {
+  border: 0;
 }
 
 input {

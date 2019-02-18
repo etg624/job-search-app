@@ -4,7 +4,7 @@ import '../styles/preLoginHeader.css';
 
 function PreLoginHeader() {
   return (
-    <div className="pre-login-header header">
+    <header className="pre-login-header header" role="banner">
       <h1>Searchule</h1>
       <Link role="link" className="login-link link" to="/">
         Login
@@ -12,7 +12,7 @@ function PreLoginHeader() {
       <Link role="link" className="signup-link link" to="/signup">
         Sign Up
       </Link>
-    </div>
+    </header>
   );
 }
 

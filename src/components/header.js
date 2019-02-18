@@ -19,7 +19,7 @@ export class Header extends Component {
         </span>
       );
       return (
-        <div className="header">
+        <div className="header" role="banner">
           <Link className="home-link link" to="/home">
             Home
           </Link>{' '}

@@ -26,32 +26,30 @@ class AddEventForm extends Component {
           })}
         >
           <div>
-            <div>
-              <label htmlFor="title">Event Title</label>
-              <Field
-                name="title"
-                component={Input}
-                type="text"
-                placeholder="Enter a title"
-                validate={[required]}
-              />
-            </div>
+            <label htmlFor="title">Event Title</label>
+            <Field
+              name="title"
+              component={Input}
+              type="text"
+              placeholder="Enter a title"
+              validate={[required]}
+            />
           </div>
           <div>
-            <div>
-              <label htmlFor="start">Stat Date</label>
-              <Field
-                name="start"
-                component={Input}
-                type="date"
-                validate={[required]}
-              />
-            </div>
+            <label htmlFor="start">Stat Date</label>
+            <Field
+              id="start"
+              name="start"
+              component={Input}
+              type="date"
+              validate={[required]}
+            />
           </div>
           <div>
             <div>
               <label htmlFor="end">End Date</label>
               <Field
+                id="end"
                 name="end"
                 component={Input}
                 validate={[required]}

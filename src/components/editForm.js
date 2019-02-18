@@ -25,50 +25,45 @@ class EditForm extends Component {
         onSubmit={handleSubmit(values => this.onSubmit(values))}
       >
         <div>
-          <label htmlFor="title">Job Title</label>
-          <div>
-            <Field
-              name="title"
-              component="input"
-              type="text"
-              placeholder="Enter a title"
-            />
-          </div>
+          <label htmlFor="edit-job-title">Job Title</label>
+          <Field
+            id="edit-job-title"
+            name="title"
+            component="input"
+            type="text"
+            placeholder="Enter a title"
+          />
         </div>
         <div>
-          <label htmlFor="description">Description</label>
-          <div>
-            <Field
-              name="description"
-              component="input"
-              type="text"
-              placeholder="Enter a description about this job"
-            />
-          </div>
+          <label htmlFor="edit-description">Description</label>
+          <Field
+            id="edit-description"
+            name="description"
+            component="input"
+            type="text"
+            placeholder="Enter a description about this job"
+          />
         </div>
         <div>
-          <label htmlFor="location">Location</label>
-          <div>
-            <Field
-              name="location"
-              component="input"
-              type="text"
-              placeholder="Where is your the job?"
-            />
-          </div>
+          <label htmlFor="edit-location">Location</label>
+          <Field
+            id="edit-location"
+            name="location"
+            component="input"
+            type="text"
+            placeholder="Where is the job?"
+          />
         </div>
         <div>
-          <label htmlFor="pay">Pay</label>
-          <div>
-            <Field
-              name="pay"
-              component="input"
-              type="text"
-              placeholder="How much does the job pay?"
-            />
-          </div>
+          <label htmlFor="edit-pay">Pay</label>
+          <Field
+            name="edit-pay"
+            component="input"
+            type="text"
+            placeholder="How much does the job pay?"
+          />
         </div>
-        <div>
+        <fieldset>
           <button
             className="form-button"
             type="submit"
@@ -84,7 +79,7 @@ class EditForm extends Component {
           >
             Clear Fields
           </button>
-        </div>
+        </fieldset>
       </form>
     );
   }
