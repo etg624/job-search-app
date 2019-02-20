@@ -103,3 +103,13 @@
 .event-dates {
   font-size: 12px;
 }
+
+@media (max-width: 350px) {
+  .job-header {
+    overflow-x: scroll;
+  }
+
+  .job-card {
+    max-width: 78%;
+  }
+}
