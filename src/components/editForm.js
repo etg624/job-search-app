@@ -111,7 +111,6 @@ class EditForm extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.jobs.job);
   return {
     initialValues: state.jobs.job
   };
