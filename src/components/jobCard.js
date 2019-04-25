@@ -60,7 +60,12 @@ export class JobCard extends Component {
       if (start === end) {
         return (
           <li key={i} className="events-list">
-            <h4>{event.title}</h4>
+            <h4
+              className="color-coded-title"
+              style={{ backgroundColor: `#${event.color}`, color: 'white' }}
+            >
+              {event.title}
+            </h4>
             <p className="event-dates">
               {start}
               <span>
@@ -76,7 +81,12 @@ export class JobCard extends Component {
 
       return (
         <li key={i} className="events-list">
-          <h4>{event.title}</h4>
+          <h4
+            className="color-coded-title"
+            style={{ backgroundColor: `#${event.color}`, color: 'white' }}
+          >
+            {event.title}
+          </h4>
           <p className="event-dates">
             {start} &mdash; {end}
             <span>

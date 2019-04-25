@@ -3,7 +3,6 @@ import Calendar from 'react-big-calendar';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import { fetchJobs } from '../actions/job-actions/getJobs';
-import './styles/calendar.css';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -15,12 +14,14 @@ class ScheduleCalendar extends Component {
   }
 
   render() {
+    console.log(this.props);
     const events = this.props.jobs.reduce((arr, job) => {
       const eventsArr = job.events.map(event => {
         return {
           start: moment(event.start).add(24, 'hours'),
           end: moment(event.end).add(24, 'hours'),
-          title: event.title
+          title: event.title,
+          color: event.color
         };
       });
       arr = [...eventsArr, ...arr];
@@ -41,7 +42,17 @@ class ScheduleCalendar extends Component {
             height: '100vh',
             padding: '30px',
             width: '100%',
-            margin: '0 auto'
+            margin: '0 auto',
+            backGroundColor: 'orange'
+          }}
+          eventPropGetter={event => {
+            let style = {
+              backgroundColor: `#${event.color}`,
+              color: 'white',
+              borderRadius: '5px',
+              border: 'none'
+            };
+            return { style };
           }}
         />
       </div>

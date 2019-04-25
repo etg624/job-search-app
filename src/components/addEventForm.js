@@ -16,7 +16,6 @@ class AddEventForm extends Component {
 
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
-
     return (
       <div>
         <form
@@ -58,6 +57,23 @@ class AddEventForm extends Component {
             </div>
           </div>
           <div>
+            <label>Color for Event</label>
+            <div>
+              <Field
+                name="color"
+                component="select"
+                className="color-picker"
+                validate={[required]}
+              >
+                <option>select</option>
+                <option value="C63769">Red</option>
+                <option value="0000ff">Blue</option>
+                <option value="3E6C39">Green</option>
+                <option value="CE80E5">Violet</option>
+                <option value="D98F0E">Orange</option>
+                <option value="080808">Black</option>
+              </Field>
+            </div>
             <button
               className="form-button"
               type="submit"

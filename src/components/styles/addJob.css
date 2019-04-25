@@ -20,6 +20,17 @@
   margin: 6px;
 }
 
+.color-picker {
+  width: 100px;
+  margin: 10px;
+}
+
+.color-coded-title {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
 @media (max-width: 1100px) {
   .add-job-form {
     width: 30%;
