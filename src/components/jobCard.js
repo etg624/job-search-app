@@ -9,25 +9,43 @@ import moment from 'moment';
 import './styles/card.css';
 export class JobCard extends Component {
   render() {
-    const commentsToRender = this.props.comments || [];
-    const comments = commentsToRender.map((comment, i) => {
+    const {
+      dispatch,
+      id,
+      title,
+      description,
+      handleSubmit,
+      location,
+      pay,
+      events,
+      comments,
+      adLink,
+      companyLink
+    } = this.props;
+    const checkLink = link => {
+      if (link) {
+        return link.includes('https://')
+          ? link
+          : link.replace(link, `https://${link}`);
+      }
+    };
+    const commentsToRender = comments || [];
+    const mappedComments = commentsToRender.map((comment, i) => {
       return (
         <li key={i}>
           {comment.content}
           <span>
             <i
               className="fas fa-trash-alt"
-              onClick={() =>
-                this.props.dispatch(deleteComment(comment.id, this.props.id))
-              }
+              onClick={() => dispatch(deleteComment(comment.id, id))}
             />
           </span>
         </li>
       );
     });
 
-    const eventsToRender = this.props.events || [];
-    const events = eventsToRender.map((event, i) => {
+    const eventsToRender = events || [];
+    const mappedEvents = eventsToRender.map((event, i) => {
       const start = moment(event.start)
         .add(12, 'hours')
         .format('MMMM Do');
@@ -48,9 +66,7 @@ export class JobCard extends Component {
               <span>
                 <i
                   className="fas fa-trash-alt"
-                  onClick={() =>
-                    this.props.dispatch(deleteEvent(event.id, this.props.id))
-                  }
+                  onClick={() => dispatch(deleteEvent(event.id, id))}
                 />
               </span>
             </p>
@@ -66,9 +82,7 @@ export class JobCard extends Component {
             <span>
               <i
                 className="fas fa-trash-alt"
-                onClick={() =>
-                  this.props.dispatch(deleteEvent(event.id, this.props.id))
-                }
+                onClick={() => dispatch(deleteEvent(event.id, id))}
               />
             </span>
           </p>
@@ -80,20 +94,24 @@ export class JobCard extends Component {
       <div className="job-card">
         <section>
           <header className="job-header">
-            <h2 className="job-title">{this.props.title}</h2>
-            <Link
-              role="link"
-              className="edit-link"
-              to={`/edit/${this.props.id}`}
-            >
+            <h2 className="job-title">{title}</h2>
+            <Link role="link" className="edit-link" to={`/edit/${id}`}>
               Edit Job
             </Link>
           </header>
           <div className="job-description">
-            <p className="job-details">{this.props.description}</p>
+            <p className="job-details">{description}</p>
+            <div className="links">
+              <span>Link to the ad:</span>{' '}
+              <a href={checkLink(adLink)}>{adLink}</a>
+            </div>
+            <div className="links">
+              <span>Company Site:</span>{' '}
+              <a href={checkLink(companyLink)}>{companyLink}</a>
+            </div>
             <div className="job-location-pay">
-              <p>{this.props.location}</p>
-              <p>{this.props.pay}</p>
+              <p>{location}</p>
+              <p>{pay}</p>
             </div>
           </div>
         </section>
@@ -111,14 +129,14 @@ export class JobCard extends Component {
             <button
               className="comment-button button"
               type="submit"
-              onClick={this.props.handleSubmit(value => {
-                return this.props.dispatch(postComment(value, this.props.id));
+              onClick={handleSubmit(value => {
+                return dispatch(postComment(value, id));
               })}
             >
               Post comment
             </button>
-            <ul className="comments">{comments}</ul>
-            <ul className="events">{events}</ul>
+            <ul className="comments">{mappedComments}</ul>
+            <ul className="events">{mappedEvents}</ul>
           </div>
           <div className="schedule-delete-buttons">
             <Link
@@ -126,7 +144,7 @@ export class JobCard extends Component {
               to={{
                 pathname: '/eventForm',
                 state: {
-                  jobId: this.props.id
+                  jobId: id
                 }
               }}
               className="schedule-button button"
@@ -137,8 +155,8 @@ export class JobCard extends Component {
 
             <button
               className="delete-button button"
-              onClick={this.props.handleSubmit(() => {
-                this.props.dispatch(deleteJob(this.props.id));
+              onClick={handleSubmit(() => {
+                dispatch(deleteJob(this.props.id));
               })}
             >
               Delete Job

@@ -60,6 +60,30 @@ class AddJob extends Component {
           </div>
 
           <div>
+            <label htmlFor="location">Ad Link</label>
+
+            <Field
+              id="adLink"
+              name="adLink"
+              component="input"
+              type="text"
+              placeholder="Link for the ad of job"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="location">Company Site</label>
+
+            <Field
+              id="companyLink"
+              name="companyLink"
+              component="input"
+              type="text"
+              placeholder="Company Website"
+            />
+          </div>
+
+          <div>
             <label htmlFor="pay">Pay</label>
 
             <Field
