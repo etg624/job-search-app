@@ -34,16 +34,7 @@ class EditForm extends Component {
             placeholder="Enter a title"
           />
         </div>
-        <div>
-          <label htmlFor="edit-description">Description</label>
-          <Field
-            id="edit-description"
-            name="description"
-            component="input"
-            type="text"
-            placeholder="Enter a description about this job"
-          />
-        </div>
+
         <div>
           <label htmlFor="edit-location">Location</label>
           <Field
