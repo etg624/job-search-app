@@ -35,7 +35,7 @@ class AddJob extends Component {
         </div>
 
         <div>
-          <label htmlFor="title">Date Applied</label>
+          <label htmlFor="dateApplied">Date Applied</label>
           <Field
             id="dateApplied"
             name="dateApplied"
@@ -58,7 +58,7 @@ class AddJob extends Component {
         </div>
 
         <div>
-          <label htmlFor="location">Ad Link</label>
+          <label htmlFor="adLink">Ad Link</label>
 
           <Field
             id="adLink"
@@ -70,7 +70,7 @@ class AddJob extends Component {
         </div>
 
         <div>
-          <label htmlFor="location">Company Site</label>
+          <label htmlFor="companyLink">Company Site</label>
 
           <Field
             id="companyLink"

@@ -37,7 +37,7 @@ class EditForm extends Component {
         </div>
 
         <div>
-          <label htmlFor="title">Date Applied</label>
+          <label htmlFor="dateApplied">Date Applied</label>
           <Field
             id="dateApplied"
             name="dateApplied"
@@ -59,7 +59,7 @@ class EditForm extends Component {
         </div>
 
         <div>
-          <label htmlFor="location">Ad Link</label>
+          <label htmlFor="adLink">Ad Link</label>
 
           <Field
             id="adLink"
@@ -71,7 +71,7 @@ class EditForm extends Component {
         </div>
 
         <div>
-          <label htmlFor="location">Company Site</label>
+          <label htmlFor="companyLink">Company Site</label>
 
           <Field
             id="companyLink"
