@@ -9,6 +9,7 @@
 }
 
 .job-card {
+  width: 80%;
   margin: 20px 8px;
   -webkit-box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
   -moz-box-shadow: 3px 19px 52px -5px rgba(82, 52, 82, 0.35);
@@ -121,6 +122,6 @@
   }
 
   .job-card {
-    max-width: 78%;
+    width: 98%;
   }
 }
