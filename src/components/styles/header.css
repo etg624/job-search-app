@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  width: 110vw;
 }
 
 .logout-link {

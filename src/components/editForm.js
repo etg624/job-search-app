@@ -88,6 +88,21 @@ class EditForm extends Component {
             placeholder="How much does the job pay?"
           />
         </div>
+
+        <div>
+          <label className="description" htmlFor="description">
+            Description
+          </label>
+
+          <Field
+            id="description"
+            name="description"
+            component="textarea"
+            type="text"
+            placeholder="Enter a description about this job"
+          />
+        </div>
+
         <fieldset>
           <button
             className="form-button"

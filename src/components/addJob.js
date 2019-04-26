@@ -18,102 +18,102 @@ class AddJob extends Component {
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
     return (
-      <div>
-        <form
-          className="add-job-form"
-          onSubmit={handleSubmit(values => this.onSubmit(values))}
-        >
-          <div>
-            <label htmlFor="title">Job Title</label>
-            <Field
-              id="title"
-              name="title"
-              component={Input}
-              type="text"
-              placeholder="Enter a title"
-              validate={[required]}
-            />
-          </div>
+      <form
+        className="add-job-form"
+        onSubmit={handleSubmit(values => this.onSubmit(values))}
+      >
+        <div>
+          <label htmlFor="title">Job Title</label>
+          <Field
+            id="title"
+            name="title"
+            component={Input}
+            type="text"
+            placeholder="Enter a title"
+            validate={[required]}
+          />
+        </div>
 
-          <div>
-            <label htmlFor="description">Description</label>
+        <div>
+          <label htmlFor="location">Location</label>
 
-            <Field
-              id="description"
-              name="description"
-              component="input"
-              type="text"
-              placeholder="Enter a description about this job"
-            />
-          </div>
+          <Field
+            id="location"
+            name="location"
+            component="input"
+            type="text"
+            placeholder="Where is the job?"
+          />
+        </div>
 
-          <div>
-            <label htmlFor="location">Location</label>
+        <div>
+          <label htmlFor="location">Ad Link</label>
 
-            <Field
-              id="location"
-              name="location"
-              component="input"
-              type="text"
-              placeholder="Where is the job?"
-            />
-          </div>
+          <Field
+            id="adLink"
+            name="adLink"
+            component="input"
+            type="text"
+            placeholder="Link for the ad of job"
+          />
+        </div>
 
-          <div>
-            <label htmlFor="location">Ad Link</label>
+        <div>
+          <label htmlFor="location">Company Site</label>
 
-            <Field
-              id="adLink"
-              name="adLink"
-              component="input"
-              type="text"
-              placeholder="Link for the ad of job"
-            />
-          </div>
+          <Field
+            id="companyLink"
+            name="companyLink"
+            component="input"
+            type="text"
+            placeholder="Company Website"
+          />
+        </div>
 
-          <div>
-            <label htmlFor="location">Company Site</label>
+        <div>
+          <label htmlFor="pay">Pay</label>
 
-            <Field
-              id="companyLink"
-              name="companyLink"
-              component="input"
-              type="text"
-              placeholder="Company Website"
-            />
-          </div>
+          <Field
+            id="pay"
+            name="pay"
+            component="input"
+            type="text"
+            placeholder="How much does the job pay?"
+          />
+        </div>
 
-          <div>
-            <label htmlFor="pay">Pay</label>
+        <div>
+          <label className="description" htmlFor="description">
+            Description
+          </label>
 
-            <Field
-              id="pay"
-              name="pay"
-              component="input"
-              type="text"
-              placeholder="How much does the job pay?"
-            />
-          </div>
+          <Field
+            id="description"
+            name="description"
+            component="textarea"
+            type="text"
+            placeholder="Enter a description about this job"
+          />
+        </div>
 
-          <div>
-            <button
-              className="form-button"
-              type="submit"
-              disabled={pristine || submitting}
-            >
-              Submit
-            </button>
-            <button
-              className="form-button"
-              type="button"
-              disabled={pristine || submitting}
-              onClick={reset}
-            >
-              Clear Values
-            </button>
-          </div>
-        </form>
-      </div>
+        <div>
+          <button
+            className="form-button"
+            type="submit"
+            disabled={pristine || submitting}
+          >
+            Submit
+          </button>
+          <button
+            className="form-button"
+            type="button"
+            disabled={pristine || submitting}
+            onClick={reset}
+          >
+            Clear Values
+          </button>
+        </div>
+      </form>
     );
   }
 }

@@ -109,6 +109,12 @@
   font-size: 12px;
 }
 
+.color-coded-title {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
 @media (max-width: 350px) {
   .job-header {
     overflow-x: scroll;
