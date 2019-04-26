@@ -35,6 +35,17 @@ class AddJob extends Component {
         </div>
 
         <div>
+          <label htmlFor="title">Date Applied</label>
+          <Field
+            id="dateApplied"
+            name="dateApplied"
+            component={Input}
+            type="date"
+            placeholder="Select the date you applied"
+          />
+        </div>
+
+        <div>
           <label htmlFor="location">Location</label>
 
           <Field

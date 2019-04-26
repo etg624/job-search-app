@@ -116,6 +116,10 @@
   margin-bottom: 2px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 @media (max-width: 350px) {
   .job-header {
     overflow-x: scroll;

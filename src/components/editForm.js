@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { updateJob } from '../actions/job-actions/updateJobs';
 import requiresLogin from '../components/auth/requires-login';
 import { getJobById } from '../actions/job-actions/getJobById';
+import Input from './input';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './styles/editForm.css';
@@ -32,6 +33,17 @@ class EditForm extends Component {
             component="input"
             type="text"
             placeholder="Enter a title"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="title">Date Applied</label>
+          <Field
+            id="dateApplied"
+            name="dateApplied"
+            component={Input}
+            type="date"
+            placeholder="Select the date you applied"
           />
         </div>
 

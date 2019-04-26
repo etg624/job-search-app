@@ -9,6 +9,7 @@ import moment from 'moment';
 import './styles/card.css';
 export class JobCard extends Component {
   render() {
+    console.log(this.props);
     const {
       dispatch,
       id,
@@ -20,8 +21,13 @@ export class JobCard extends Component {
       events,
       comments,
       adLink,
-      companyLink
+      companyLink,
+      dateApplied
     } = this.props;
+
+    const formattedApplyDate = moment(dateApplied)
+      .add(1, 'day')
+      .format('MMMM Do');
     const checkLink = link => {
       if (link) {
         return link.includes('https://')
@@ -111,17 +117,26 @@ export class JobCard extends Component {
           </header>
           <div className="job-description">
             <p className="job-details">{description}</p>
+            <div className="applied-on">
+              <p className="applied-on-text">
+                Applied on: <span className="bold">{formattedApplyDate}</span>
+              </p>
+            </div>
             <div className="links">
               <span>Link to the ad:</span>{' '}
-              <a href={checkLink(adLink)}>{adLink}</a>
+              <a className="bold" href={checkLink(adLink)}>
+                {adLink}
+              </a>
             </div>
             <div className="links">
               <span>Company Site:</span>{' '}
-              <a href={checkLink(companyLink)}>{companyLink}</a>
+              <a className="bold" href={checkLink(companyLink)}>
+                {companyLink}
+              </a>
             </div>
             <div className="job-location-pay">
-              <p>{location}</p>
-              <p>{pay}</p>
+              <p className="bold">{location}</p>
+              <p className="bold">{pay}</p>
             </div>
           </div>
         </section>

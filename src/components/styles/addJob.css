@@ -15,6 +15,10 @@
   margin: 30px auto;
 }
 
+.applied-on {
+  padding: 5px;
+}
+
 textarea {
   width: 310px;
   height: 210px;
